@@ -1,4 +1,6 @@
 @import 'styles/placeholders';
+@import 'styles/constants';
+@import 'styles/mixins';
 
 html {
     box-sizing: border-box;
@@ -19,7 +21,7 @@ html {
     font-size: 1.6rem;
 }
 
-html,
-body {
-    margin: 0;
+h1 {
+    @include font(5.2rem, 6.5rem, 700, $primaryColor);
 }
+

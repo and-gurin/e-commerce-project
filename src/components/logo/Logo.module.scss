@@ -4,5 +4,5 @@
 
 .text {
   @extend %font-primary;
-  @include font(3.2rem, normal, 700, $blackColor)
+  @include font(3.2rem, normal, 700, $blackColor);
 }
