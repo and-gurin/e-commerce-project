@@ -1,0 +1,17 @@
+@import 'constants';
+
+
+@mixin font ($fontSize, $lineHeight, $fontWeight, $textColor) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  color: $textColor;
+}
+
+@mixin flex ($flexDirection, $justify, $align, $wrap) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}

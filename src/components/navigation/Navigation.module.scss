@@ -1,0 +1,6 @@
+@import 'src/styles/mixins.scss';
+
+.link {
+    @include font(1.6rem, normal, 500, $blackColor);
+    text-decoration: none;
+}

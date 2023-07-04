@@ -1,0 +1,8 @@
+@import 'src/styles/placeholders';
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.text {
+  @extend %font-primary;
+  @include font(3.2rem, normal, 700, $blackColor)
+}
