@@ -26,3 +26,10 @@ h1 {
     @include font(5.2rem, 6.5rem, 700, $primaryColor);
 }
 
+h3 {
+    @include font(4.0rem, 120%, 700, $grayFirstColor);
+}
+
+h4 {
+    @include font(2.4rem, 150%, 600, $fontFirstColor);
+}

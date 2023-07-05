@@ -24,9 +24,9 @@ const Card = () => {
                          width={card.width}
                          height={card.height}
                          alt={card.alt}/>
-                    <p className={s.cardTitle}>
+                    <h4 className={s.cardTitle}>
                         {card.title}
-                    </p>
+                    </h4>
                 </Link>
             </article>
         )

@@ -12,10 +12,10 @@ import SearchIcon from "../../assets/svg/header/SearchIcon.tsx";
 
 const UserMenu = () => {
     const links = [
-        {id: 1, src: <AlertIcon/>, alt: 'alert', size: '28px', href: '#'},
-        {id: 2, src: <SearchIcon/>, alt: 'search', size: '28px', href: '#'},
-        {id: 3, src: <HeartIcon/>, alt: 'favourite', size: '28px', href: '#'},
-        {id: 4, src: <CartIcon/>, alt: 'cart', size: '28px', href: '#'},
+        {id: 1, src: <AlertIcon/>, href: '#'},
+        {id: 2, src: <SearchIcon/>, href: '#'},
+        {id: 3, src: <HeartIcon/>, href: '#'},
+        {id: 4, src: <CartIcon/>, href: '#'},
     ]
     return (
         links.map(link =>

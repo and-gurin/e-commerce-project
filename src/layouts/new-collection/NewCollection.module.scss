@@ -39,9 +39,10 @@
   padding: 25px 72px;
   cursor: pointer;
   margin-bottom: 32px;
-}
-.button:hover {
-  background-color: $bgLightColor;
-  transition: 300ms ease;
-  color: $primaryColor;
+
+  &:hover {
+    background-color: $bgLightColor;
+    transition: 300ms ease;
+    color: $primaryColor;
+  }
 }
