@@ -1,3 +1,5 @@
+@import 'src/styles/constants.scss';
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -18,4 +20,13 @@
   display: flex;
   gap: 45px;
   margin-left: 158px;
+}
+
+.svg {
+  color: $blackColor;
+}
+
+.svg:hover {
+  color: $primaryColor;
+  transition: 300ms ease;
 }

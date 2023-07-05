@@ -1,29 +1,29 @@
 import React from 'react';
-import alert from '../../assets/svg/header/mdi_account-alert-outline.svg'
-import search from '../../assets/svg/header/akar-icons_search.svg'
-import favourite from '../../assets/svg/header/akar-icons_heart.svg'
-import cart from '../../assets/svg/header/ant-design_shopping-cart-outlined.svg'
 import {Link} from "react-router-dom";
 import Logo from '../../components/logo/Logo';
 import Navigation from '../../components/navigation/Navigation';
 import s from './Header.module.scss'
+import HeartIcon from "../../assets/svg/header/HeartIcon.tsx";
+import AlertIcon from "../../assets/svg/header/AlertIcon.tsx";
+import CartIcon from "../../assets/svg/header/CartIcon.tsx";
+import SearchIcon from "../../assets/svg/header/SearchIcon.tsx";
 
-const links = [
-    {id: 1, src: alert, alt: 'alert', size: '28px', href: '#'},
-    {id: 2, src: search, alt: 'search', size: '28px', href: '#'},
-    {id: 3, src: favourite, alt: 'favourite', size: '28px', href: '#'},
-    {id: 4, src: cart, alt: 'cart', size: '28px', href: '#'},
-]
+
 
 const UserMenu = () => {
+    const links = [
+        {id: 1, src: <AlertIcon/>, alt: 'alert', size: '28px', href: '#'},
+        {id: 2, src: <SearchIcon/>, alt: 'search', size: '28px', href: '#'},
+        {id: 3, src: <HeartIcon/>, alt: 'favourite', size: '28px', href: '#'},
+        {id: 4, src: <CartIcon/>, alt: 'cart', size: '28px', href: '#'},
+    ]
     return (
         links.map(link =>
             <li key={link.id}>
-                <Link to={link.href}>
-                    <img src={link.src} alt={link.alt} width={link.size} height={link.size}/>
+                <Link to={link.href} className={s.svg}>
+                    {link.src}
                 </Link>
             </li>
-
         )
     )
 }
