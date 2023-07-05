@@ -1,13 +1,13 @@
 import React from 'react'
 import Header from './layouts/header/Header';
-import NewCollection from "./layouts/new-collection/NewCollection";
+import HomePage from './pages/HomePage';
 
 function App() {
 
     return (
         <>
             <Header/>
-            <NewCollection/>
+            <HomePage/>
         </>
     )
 }
