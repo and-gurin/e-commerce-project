@@ -141,36 +141,44 @@ const linksList = links.map(link => {
 
 const Product = () => {
     return (
-        products.map(product =>
-            <Link to={product.href}>
-                <article className={s.card}>
-                    <div className={s.overlay}>
-                        <button className={s.overlayButton}>
-                            Add to cart
-                        </button>
-                        <div className={s.overlayLinkList}>
-                            {linksList}
-                        </div>
-                    </div>
-                    <img
-                        className={s.cardImg}
-                        src={product.src}
-                        alt={product.alt}
-                        width={product.width}
-                        height={product.height}
-                    />
-                    <div className={s.cardHeader}>
-                        <h4 className={s.cardTitle}>{product.title}</h4>
-                        <p className={s.cardDescription}>
-                            {product.description}
-                        </p>
-                        <div className={s.cardPrice}>
-                            <p className={s.cardCurrentPrice}>{`Rp ${product.price}`}</p>
-                            {product.oldPrice && <p className={s.cardOldPrice}>{`Rp ${product.oldPrice}`}</p>}
-                        </div>
-                    </div>
-                </article>
-            </Link>
+        products.map(product => {
+                const productStatus = product.status === 'New' ? s.cardBadgeNew : s.cardBadgeDiscont
+                return (
+                    <Link to={product.href}>
+                        <article className={s.card}>
+                            <div className={s.overlay}>
+                                <button className={s.overlayButton}>
+                                    Add to cart
+                                </button>
+                                <div className={s.overlayLinkList}>
+                                    {linksList}
+                                </div>
+                            </div>
+                            <img
+                                className={s.cardImg}
+                                src={product.src}
+                                alt={product.alt}
+                                width={product.width}
+                                height={product.height}
+                            />
+                            <span className={product.status && s.cardBadge + ' ' + productStatus}>
+                            {product.status}
+                            </span>
+                            <div className={s.cardHeader}>
+                                <h4 className={s.cardTitle}>{product.title}</h4>
+                                <p className={s.cardDescription}>
+                                    {product.description}
+                                </p>
+                                <div className={s.cardPrice}>
+                                    <p className={s.cardCurrentPrice}>{`Rp ${product.price}`}</p>
+                                    {product.oldPrice && <p className={s.cardOldPrice}>{`Rp ${product.oldPrice}`}</p>}
+                                </div>
+                            </div>
+                        </article>
+                    </Link>
+                )
+
+            }
         )
     )
 }

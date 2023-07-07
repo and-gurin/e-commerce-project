@@ -36,9 +36,28 @@
     display: block;
   }
 
+  &Badge {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    @include font(1.6rem, 50px, 500, $whiteColor);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  &BadgeDiscont {
+    background-color: $colorRedAccents;
+  }
+
+  &BadgeNew {
+    background-color: $colorGreenAccents;
+  }
+
   &Header {
     background-color: $bgLighterColor;
     padding: 16px 0 30px 16px;
+    text-align: left;
   }
 
   &Title {

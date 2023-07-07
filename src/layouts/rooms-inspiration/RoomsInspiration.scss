@@ -1,0 +1,150 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.wrapper {
+  background-color: $bgLightestColor;
+  display: flex;
+  padding: 44px 0 44px 100px;
+  align-items: center;
+  margin-bottom: 67px;
+}
+
+.promo {
+
+
+  &Title {
+    padding-bottom: 7px;
+  }
+
+  &Subtitle {
+    @include font(1.6rem, 150%, 500, $graySecondColor);
+    padding-bottom: 25px;
+  }
+
+  &Button {
+    @include font(1.6rem, 1.6rem, 700, $whiteColor);
+    background-color: $primaryColor;
+    border: none;
+    padding: 12px 38px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $bgLightColor;
+      transition: 300ms ease;
+      color: $primaryColor;
+    }
+  }
+}
+
+.slider {
+  position: relative;
+
+  &Aside {
+    background: rgba(255, 255, 255, 0.72);
+    padding: 32px 17px 32px 32px;
+  }
+
+  &Description {
+    @include font(1.6rem, 150%, 500, $graySecondColor);
+  }
+
+  &Title {
+    @include font(2.8rem, 150%, 600, $graySecondColor);
+  }
+
+  &ArrowButton {
+    position: absolute;
+    bottom: 0 ;
+    right: -48px;
+  }
+}
+
+.slick-list {
+  height: 582px;
+  width: 876px;
+  overflow: hidden;
+}
+
+.slick-track {
+  position: absolute;
+  overflow: hidden;
+}
+
+.slick-cloned {
+  opacity: 0;
+}
+
+.slick-active {
+  opacity: 1;
+  display: block !important;
+  margin-right: 24px;
+  width: 372px !important;
+  height: 486px !important;
+  overflow: hidden;
+}
+
+.slick-current {
+  display: block;
+  width: 404px !important;
+  height: 582px !important;
+}
+
+.slick-next {
+  position: absolute;
+  margin-right: 47px;
+  width: 64px;
+  height: 64px;
+  right: 0;
+}
+
+.custom-dots {
+  display: flex !important;
+  gap: 35px;
+  position: absolute;
+  top: 526px;
+  margin-left: 428px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.custom-dots li {
+  margin-right: -24px;
+  width: 27px;
+  height: 27px;
+}
+
+.custom-dots #first_ellipse {
+  color: $graySixthColor;
+}
+
+.custom-dots #second_ellipse {
+  color: $whiteColor;
+}
+
+.slick-active #second_ellipse {
+  color: $primaryColor;
+}
+
+.slick-active #first_ellipse {
+  color: $primaryColor;
+}
+
+.custom-dots li::marker {
+  content: ''
+}
+
+
+
+
+.slick-slide .sliderAside {
+  display: none;
+}
+
+.slick-current .sliderAside {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 428px;
+  margin-left: 24px;
+  align-items: flex-start;
+}
