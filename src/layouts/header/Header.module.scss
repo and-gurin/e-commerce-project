@@ -3,7 +3,9 @@
 .wrapper {
   display: flex;
   align-items: center;
-  padding-left: 54px;
+  //padding-left: 54px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .logo {
