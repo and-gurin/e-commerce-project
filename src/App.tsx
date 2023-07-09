@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './layouts/header/Header';
 import HomePage from './pages/HomePage';
+import Footer from "./layouts/footer/Footer";
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
         <>
             <Header/>
             <HomePage/>
+            <Footer/>
         </>
     )
 }

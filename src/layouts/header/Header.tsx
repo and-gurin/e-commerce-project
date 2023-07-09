@@ -8,7 +8,12 @@ import AlertIcon from "../../assets/svg/header/AlertIcon.tsx";
 import CartIcon from "../../assets/svg/header/CartIcon.tsx";
 import SearchIcon from "../../assets/svg/header/SearchIcon.tsx";
 
-
+const links = [
+    {id: 1, title: 'Home', href: '/'},
+    {id: 2, title: 'Shop', href: '/about'},
+    {id: 3, title: 'About', href: '/links'},
+    {id: 4, title: 'Contact', href: '/'},
+]
 
 const UserMenu = () => {
     const links = [
@@ -35,7 +40,7 @@ const Header = () => {
                 <Logo/>
             </div>
             <ul className={s.nav}>
-                <Navigation/>
+                <Navigation links={links}/>
             </ul>
             <ul className={s.userMenu}>
                 <UserMenu/>

@@ -1,8 +1,7 @@
 @import 'src/styles/mixins.scss';
 
 .wrapper {
-  width: 100%;
-  height: 897px;
+  height: 830px;
   @include background($cover:contain);
   background-image: url('../../assets/furnio-furniture/furnio-furniture.png');
 }

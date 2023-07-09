@@ -7,7 +7,6 @@ import dinner from '../../assets/rooms/dining.png'
 import bedroom from '../../assets/rooms/bedroom.png'
 import living from '../../assets/rooms/living.png'
 import sliderRight from '../../assets/svg/slider-right-arrow.svg'
-import './imgSlider.scss'
 import './RoomsInspiration.scss'
 import {Link} from 'react-router-dom';
 
