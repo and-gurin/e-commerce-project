@@ -24,7 +24,6 @@ const products = [
         alt: 'syltherine',
         width,
         height,
-        href: '#',
         title: 'Syltherine',
         description: 'Stylish cafe chair',
         price: '2.500.000',
@@ -37,7 +36,6 @@ const products = [
         alt: 'liviosa',
         width,
         height,
-        href: '#',
         title: 'Liviosa',
         description: 'Stylish cafe chair',
         price: '2.500.000',
@@ -50,7 +48,6 @@ const products = [
         alt: 'lolito',
         width,
         height,
-        href: '#',
         title: 'Lolito',
         description: 'Luxury big sofa',
         price: '7.000.000',
@@ -63,7 +60,6 @@ const products = [
         alt: 'respira',
         width,
         height,
-        href: '#',
         title: 'Respira',
         description: 'Outdoor bar table and stool',
         price: '500.000',
@@ -76,7 +72,6 @@ const products = [
         alt: 'grifo',
         width,
         height,
-        href: '#',
         title: 'Grifo',
         description: 'Night lamp',
         price: '1.500.000',
@@ -89,7 +84,6 @@ const products = [
         alt: 'muggo',
         width,
         height,
-        href: '#',
         title: 'Muggo',
         description: 'Small mug',
         price: '150.000',
@@ -102,7 +96,6 @@ const products = [
         alt: 'pingky',
         width,
         height,
-        href: '#',
         title: 'Pingky',
         description: 'Cute bed set',
         price: '7.000.000',
@@ -115,7 +108,6 @@ const products = [
         alt: 'potty',
         width,
         height,
-        href: '#',
         title: 'Potty',
         description: 'Minimalist flower pot',
         price: '1.500.000',
@@ -144,7 +136,7 @@ const Product = () => {
         products.map(product => {
                 const productStatus = product.status === 'New' ? s.cardBadgeNew : s.cardBadgeDiscont
                 return (
-                    <Link to={product.href}>
+                    <Link to={'/products/' + product.id}>
                         <article className={s.card}>
                             <div className={s.overlay}>
                                 <button className={s.overlayButton}>
