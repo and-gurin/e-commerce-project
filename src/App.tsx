@@ -3,7 +3,7 @@ import Header from './layouts/header/Header';
 import HomePage from './pages/HomePage';
 import Footer from "./layouts/footer/Footer";
 import { Routes, Route } from 'react-router-dom';
-import SingleProduct from "./layouts/singleProduct/SingleProduct";
+import SingleProduct from "./layouts/single-product/SingleProduct";
 
 function App() {
 

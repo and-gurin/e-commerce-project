@@ -1,0 +1,83 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.link {
+  @include font(1.6rem, 150%, 400, $grayFifthColor);
+  margin-right: 14px;
+
+
+  &List {
+    display: flex;
+    align-items: center;
+    padding: 38px 100px;
+    margin: 0 auto;
+    background-color: $bgBaseColor;
+  }
+
+  &Arrow {
+    margin-right: 25px;
+  }
+
+  &Title {
+    margin-left: 34px;
+    @include font(1.6rem, 150%, 400, $blackColor);
+  }
+}
+
+.product {
+
+  &Images {
+    display: flex;
+    gap: 31px;
+  }
+
+  &Thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &Thumbnail {
+    border-radius: 10px;
+    background-color: $bgBaseColor;
+    width: 76px;
+    cursor: pointer;
+  }
+
+  &Photo {
+    width: 423px;
+    height: 500px;
+    background-color: $bgBaseColor;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  &Details {
+
+  }
+
+  &Title {
+    @include font(4.2rem, 150%, 400, $blackColor);
+  }
+
+  &Price {
+    @include font(2.4rem, 150%, 500, $grayFifthColor);
+  }
+
+  &Rating {
+    display: flex;
+    align-items: center;
+  }
+
+  &CustomerReview {
+    @include font(1.3rem, 150%, 400, $grayFifthColor);
+  }
+
+  &Description {
+    @include font(1.3rem, 150%, 400, $blackColor);
+  }
+}
+
+
+
