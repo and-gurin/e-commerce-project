@@ -1,0 +1,56 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.radioLabel {
+    margin-right: 7px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.radioInput {
+    margin: 0;
+    visibility: hidden;
+}
+
+.radioInput:checked + .size {
+    background: $primaryColor;
+    color: $whiteColor;
+    transition: color 300ms ease;
+}
+
+.radioInput:checked + .color:after {
+    content: '';
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: $bgBaseColor;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 300ms ease;
+
+}
+
+.customRadio {
+    left: -8px;
+    top: 6px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    @include font(1.3rem, 30px, 400, $blackColor);
+    display: inline-block;
+    transition: background-color 300ms ease;
+}
+
+.color {
+    border-radius: 50%;
+    position: relative;
+    transition: background-color 300ms ease;
+}
+
+.size {
+    background-color: $bgBaseColor;
+    border-radius: 5px;
+    text-align: center;
+
+}

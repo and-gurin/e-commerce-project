@@ -70,13 +70,22 @@
     align-items: center;
   }
 
-  &CustomerReview {
+  &Size {
     @include font(1.3rem, 150%, 400, $grayFifthColor);
   }
 
   &Description {
     @include font(1.3rem, 150%, 400, $blackColor);
   }
+
+  &Radio {
+
+  }
+
+  &Buttons {
+    display: flex;
+  }
+
 }
 
 

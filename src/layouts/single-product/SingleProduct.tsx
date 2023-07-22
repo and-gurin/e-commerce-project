@@ -15,22 +15,13 @@ import thirdPhoto from '../../assets/product-photo/image 82.png'
 import fourthPhoto from '../../assets/product-photo/image 99.png'
 import {Rating} from '@mui/material';
 import {Star} from '@mui/icons-material'
+import Radio from '../../components/radio/Radio';
+import InputPlusMinus from '../../components/input-plus-minus/InputPlusMinus';
 
 const breadcrumbLinks = [
     {title: 'Home', href: ''},
     {title: 'Shop', href: ''}
 ]
-
-const breadcrumbs = breadcrumbLinks.map((link, index) =>
-    <>
-        <Link key={index} to={link.href}>
-            <li className={s.link}>
-                {link.title}
-            </li>
-        </Link>
-        <img src={rightArrow} className={s.linkArrow} alt='right-arrow'/>
-    </>
-)
 
 const productThumbnail = [
         {
@@ -70,6 +61,29 @@ const productPhoto = [
     }
 ]
 
+const productAdditionInfo = {
+    size: [
+        {value: '', id: 'lSize', title: 'L'},
+        {value: '', id: 'xlSize', title: 'XL'},
+        {value: '', id: 'xsSize', title: 'XS'}
+    ],
+    color: [
+        {value: '#816DFA', id: 'blueColor', title: ''},
+        {value: '#000000', id: 'blackColor', title: ''},
+        {value: '#B88E2F', id: 'goldColor', title: ''}
+    ]
+}
+
+const breadcrumbs = breadcrumbLinks.map((link, index) =>
+    <>
+        <Link key={index} to={link.href}>
+            <li className={s.link}>
+                {link.title}
+            </li>
+        </Link>
+        <img src={rightArrow} className={s.linkArrow} alt='right-arrow'/>
+    </>
+)
 
 const SingleProduct = () => {
 
@@ -87,8 +101,10 @@ const SingleProduct = () => {
         status: '-30%'
     });
     const [photo, setPhoto] = useState<string>(productPhoto[0].src)
-    const [ratingValue, setRatingValue] = useState<number>(2.5)
-
+    const [ratingValue, setRatingValue] = useState<number>(4.5)
+    const [sizeValue, setSizeValue] = useState('')
+    const [colorValue, setColorValue] = useState('')
+    const [countValue, setCountValue] = useState(1)
 
     const singleProduct: ProductType = products.find(prod => prod.id === productId);
 
@@ -150,7 +166,7 @@ const SingleProduct = () => {
                         <svg width="2" height="37" style={{ marginRight: '22px' }} viewBox="0 0 2 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line x1="1" x2="1" y2="37" stroke="#9F9F9F" stroke-width="1"/>
                         </svg>
-                        <Link className={s.productCustomerReview} to='#'>
+                        <Link className={s.productSize} to='#'>
                             5 Customer Review
                         </Link>
                     </div>
@@ -160,7 +176,33 @@ const SingleProduct = () => {
                         well-balanced audio which boasts a clear midrange
                         and extended highs for a sound.
                     </p>
-
+                    <p className={s.productSize}>
+                        Size
+                    </p>
+                    <div className={s.productRadio}>
+                        <Radio
+                            options={productAdditionInfo.size}
+                            value={sizeValue}
+                            onChange={(e) => setSizeValue(e.currentTarget.value)}
+                        />
+                    </div>
+                    <p className={s.productSize}>
+                        Color
+                    </p>
+                    <div className={s.productRadio}>
+                        <Radio
+                               options={productAdditionInfo.color}
+                               value={colorValue}
+                               onChange={(e) => setColorValue(e.currentTarget.value)}
+                        />
+                    </div>
+                </div>
+                <div className={s.productButtons}>
+                    <InputPlusMinus
+                        value={countValue}
+                        onClickPlus={() => setCountValue(countValue + 1)}
+                        onClickMinus={() => setCountValue(countValue - 1)}
+                    />
                 </div>
             </article>
         </section>
