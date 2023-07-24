@@ -1,41 +1,48 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
 input {
   text-align: center;
   border: 1px solid #6C757D;
 }
 
-input[type="number"] {
+input[type='number'] {
   -webkit-appearance: textfield !important;
   -moz-appearance: textfield !important;
   appearance: textfield !important;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
 .wrapper {
-  border: 2px #dcd3d3 solid;
+  border: 1px solid $grayFifthColor;
   width: 123px;
   height: 64px;
-  padding: 10px;
   display: flex;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 10px;
+
 }
 
 .plusMinus {
   height: 100%;
-  width: 30%;
-  background: white;
+  width: 60%;
+  background: transparent;
   border: none;
-  font-size: 40px;
-  color: #5f5fce;
+  @include font(1.6rem, 150%, 500, $blackColor);
+  cursor: pointer;
 }
 
 .num {
   height: 100%;
-  width: 39%;
+  width: 100%;
   border: none;
-  font-size: 30px;
+  @include font(1.6rem, 150%, 500, $blackColor);
+}
+
+.plusMinus:hover {
+  color: $primaryColor;
 }

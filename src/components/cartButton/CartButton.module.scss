@@ -1,0 +1,13 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.button {
+  border: 1px solid $blackColor;
+  @include font(2.0rem, 150%, 400, $blackColor);
+  cursor: pointer;
+}
+
+.button:hover {
+  color: $primaryColor;
+  border: 1px solid $primaryColor;
+}

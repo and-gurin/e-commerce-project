@@ -40,11 +40,11 @@
     @include font(1.3rem, 30px, 400, $blackColor);
     display: inline-block;
     transition: background-color 300ms ease;
+    position: relative;
 }
 
 .color {
     border-radius: 50%;
-    position: relative;
     transition: background-color 300ms ease;
 }
 
@@ -52,5 +52,4 @@
     background-color: $bgBaseColor;
     border-radius: 5px;
     text-align: center;
-
 }

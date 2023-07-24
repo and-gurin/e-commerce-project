@@ -10,7 +10,7 @@ const HomePage = () => {
         <>
             <NewCollection/>
             <BrowseTheRange/>
-            <OurProducts/>
+            <OurProducts title={'Our Products'}/>
             <RoomsInspiration/>
             <FurniroFurniture/>
         </>

@@ -1,0 +1,55 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.radioWrapper {
+  text-align: center;
+  margin-bottom: 37px;
+}
+
+.radioLabel {
+  margin-right: 7px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.radioInput {
+  margin: 0;
+  visibility: hidden;
+}
+
+.radioInput:checked + .customRadio {
+  @include font(2.4rem, 150%, 500, $blackColor);
+  transition: color 300ms ease;
+}
+
+.customRadio {
+  left: -8px;
+  top: 6px;
+  cursor: pointer;
+  @include font(2.4rem, 150%, 400, $grayFifthColor);
+  display: inline-block;
+  transition: background-color 300ms ease;
+  position: relative;
+}
+
+.description {
+  text-align: left;
+  @include font(1.6rem, 150%, 400, $grayFifthColor);
+  margin: 0 auto 30px;
+  max-width: 1026px;
+
+  &Wrapper {
+    margin-bottom: 37px;
+  }
+}
+
+.imgWrapper {
+  display: flex;
+  gap: 29px;
+  margin-bottom: 62px;
+}
+
+.figure {
+  border-radius: 10px;
+  background-color: $bgBaseColor;
+  min-width: 605px;
+}

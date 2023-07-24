@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import grifo from '../../assets/furniture/grifo.png';
 import liviosa from '../../assets/furniture/leviosa.png';
 import lolito from '../../assets/furniture/lolito.png';
@@ -126,9 +126,9 @@ const linksList = links.map(link => {
     }
 )
 
-export const Product = () => {
+export const Product = ({amount}) => {
     return (
-        products.map(product => {
+        products.slice(0, amount).map(product => {
                 const productStatus = product.status === 'New' ? s.cardBadgeNew : s.cardBadgeDiscont
                 return (
                     <Link to={'/products/' + product.id}>
@@ -170,16 +170,19 @@ export const Product = () => {
     )
 }
 
-export const OurProducts = () => {
+export const OurProducts = ({title}) => {
+
+    const [amount, setAmount] = useState(4)
+
     return (
         <section className={s.wrapper}>
             <h3 className={s.title}>
-                Our Products
+                {title}
             </h3>
             <div className={s.cards}>
-                <Product/>
+                <Product amount={amount}/>
             </div>
-            <button className={s.button}>
+            <button onClick={() => setAmount(amount + 4)} className={s.button}>
                 Show More
             </button>
         </section>

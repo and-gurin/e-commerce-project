@@ -3,7 +3,7 @@ import Header from './layouts/header/Header';
 import HomePage from './pages/HomePage';
 import Footer from "./layouts/footer/Footer";
 import { Routes, Route } from 'react-router-dom';
-import SingleProduct from "./layouts/single-product/SingleProduct";
+import SingleProductPage from "./pages/SingleProductPage";
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
                 <Route path='/products/*' element={
                 <>
                     <Routes>
-                        <Route path='/:id' element={<SingleProduct/>}/>
+                        <Route path='/:id' element={<SingleProductPage/>}/>
                     </Routes>
 
                 </>
