@@ -1,7 +1,14 @@
-import React from 'react';
 import s from './CartButton.module.scss'
 
-const CartButton = ({title, onClick, borderRadius, width, height, bg, fontSize}) => {
+const CartButton = ({title, onClick, borderRadius, width, height, bg, fontSize}:
+                        {
+                            title:string,
+                            onClick?: ()=>void,
+                            borderRadius: string,
+                            width: string,
+                            height: string,
+                            bg: string,
+                            fontSize?: string}) => {
     return (
         <button className={s.button}
                 onClick={onClick}

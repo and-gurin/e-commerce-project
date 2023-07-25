@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import s from './SingleProduct.module.scss';
 import {products, ProductType} from '../our-products/OurProducts';
@@ -134,7 +134,7 @@ const shares = productAddition.shares.map((share, index) =>
 const SingleProduct = () => {
 
     const params = useParams();
-    const productId = +params.id;
+    const productId: number = +params.id;
 
     const [product, setProduct] = useState<ProductType>({
         id: 1,
@@ -147,7 +147,7 @@ const SingleProduct = () => {
         status: '-30%'
     });
     const [photo, setPhoto] = useState<string>(productPhoto[0].src)
-    const [ratingValue, setRatingValue] = useState<number>(4.5)
+    const [ratingValue, setRatingValue] = useState(4.5)
     const [sizeValue, setSizeValue] = useState('')
     const [colorValue, setColorValue] = useState('')
     const [countValue, setCountValue] = useState(1)

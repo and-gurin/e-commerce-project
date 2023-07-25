@@ -1,4 +1,3 @@
-import React from 'react';
 import {Link} from 'react-router-dom';
 import s from './Breadcrumbs.module.scss';
 import rightArrow from '../../assets/svg/right_arrow.svg';
@@ -20,7 +19,7 @@ const breadcrumbs = breadcrumbLinks.map((link, index) =>
     </>
 )
 
-const Breadcrumbs = ({title}) => {
+const Breadcrumbs = ({title}: {title: string}) => {
     return (
         <ul className={s.linkList}>
             {breadcrumbs}

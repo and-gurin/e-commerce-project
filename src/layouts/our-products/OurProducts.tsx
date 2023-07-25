@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import grifo from '../../assets/furniture/grifo.png';
 import liviosa from '../../assets/furniture/leviosa.png';
 import lolito from '../../assets/furniture/lolito.png';
@@ -112,9 +112,9 @@ export const products: ProductType[] = [
 ]
 
 const links = [
-    {id: 1, src: <ShareIcon/>, href: '#'},
-    {id: 3, src: <CompareIcon/>, href: '#'},
-    {id: 2, src: <LikeIcon/>, href: '#'},
+    {id: 1, src: ShareIcon, href: '#'},
+    {id: 3, src: CompareIcon, href: '#'},
+    {id: 2, src: LikeIcon, href: '#'},
 ]
 
 const linksList = links.map(link => {
@@ -126,7 +126,7 @@ const linksList = links.map(link => {
     }
 )
 
-export const Product = ({amount}) => {
+export const Product = ({amount}: {amount: number}) => {
     return (
         products.slice(0, amount).map(product => {
                 const productStatus = product.status === 'New' ? s.cardBadgeNew : s.cardBadgeDiscont
@@ -170,7 +170,7 @@ export const Product = ({amount}) => {
     )
 }
 
-export const OurProducts = ({title}) => {
+export const OurProducts = ({title}: {title: string}) => {
 
     const [amount, setAmount] = useState(4)
 

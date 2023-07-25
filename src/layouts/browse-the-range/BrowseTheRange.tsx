@@ -1,4 +1,3 @@
-import React from 'react';
 import s from './BrowseTheRange.module.scss'
 import dining from '../../assets/home-page/dining.png'
 import living from '../../assets/home-page/living.png'

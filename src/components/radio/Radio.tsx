@@ -1,7 +1,13 @@
-import React from 'react';
 import s from './Radio.module.scss'
+import {ChangeEvent} from "react/ts5.0";
 
-const Radio = ({value, onChange, options}) => {
+type OptionsPropsType = {
+    value: string,
+    id: string,
+    title: string
+}
+
+const Radio = ({value, onChange, options}: {value: string, onChange: (e: ChangeEvent<HTMLInputElement>) => void, options: OptionsPropsType[]}) => {
     return (
         options.map((option, index) =>
             <label key={index} htmlFor={option.id} className={s.radioLabel}>
