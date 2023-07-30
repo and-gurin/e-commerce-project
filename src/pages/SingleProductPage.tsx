@@ -1,5 +1,5 @@
-import SingleProduct from '../layouts/single-product/SingleProduct';
-import {OurProducts} from "../layouts/our-products/OurProducts";
+import SingleProduct from '@/layouts/single-product/SingleProduct';
+import {OurProducts} from "@/layouts/our-products/OurProducts";
 
 const SingleProductPage = () => {
     return (

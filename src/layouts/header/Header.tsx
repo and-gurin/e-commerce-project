@@ -1,11 +1,11 @@
 import {Link} from "react-router-dom";
-import Logo from '../../components/logo/Logo';
-import Navigation from '../../components/navigation/Nav';
+import Logo from '@/components/logo/Logo';
+import Navigation from '@/components/navigation/Nav';
 import s from './Header.module.scss'
-import HeartIcon from "../../assets/svg/header/HeartIcon.tsx";
-import AlertIcon from "../../assets/svg/header/AlertIcon.tsx";
-import CartIcon from "../../assets/svg/header/CartIcon.tsx";
-import SearchIcon from "../../assets/svg/header/SearchIcon.tsx";
+import HeartIcon from "@/assets/svg/header/HeartIcon.tsx";
+import AlertIcon from "@/assets/svg/header/AlertIcon.tsx";
+import CartIcon from "@/assets/svg/header/CartIcon.tsx";
+import SearchIcon from "@/assets/svg/header/SearchIcon.tsx";
 
 const links = [
     {id: 1, title: 'Home', href: '/'},

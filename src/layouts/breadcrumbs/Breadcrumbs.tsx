@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import s from './Breadcrumbs.module.scss';
-import rightArrow from '../../assets/svg/right_arrow.svg';
-import verticalLine from '../../assets/svg/vertical-line.svg';
+import rightArrow from '@/assets/svg/right_arrow.svg';
+import verticalLine from '@/assets/svg/vertical-line.svg';
 
 const breadcrumbLinks = [
     {title: 'Home', href: ''},

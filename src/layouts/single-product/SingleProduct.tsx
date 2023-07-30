@@ -2,23 +2,23 @@ import {useEffect, useState} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import s from './SingleProduct.module.scss';
 import {products, ProductType} from '../our-products/OurProducts';
-import syltherine from '../../assets/furniture/syltherine.png';
-import firstThumb from '../../assets/product-photo/Outdoor sofa set 2.png'
-import secondThumb from '../../assets/product-photo/Outdoor sofa set_2 1.png'
-import thirdThumb from '../../assets/product-photo/Stuart sofa 1.png'
-import fourthThumb from '../../assets/product-photo/Maya sofa three seater (1) 1.png'
-import firstPhoto from '../../assets/product-photo/Asgaard sofa 3.png'
-import secondPhoto from '../../assets/product-photo/image 76.png'
-import thirdPhoto from '../../assets/product-photo/image 82.png'
-import fourthPhoto from '../../assets/product-photo/image 99.png'
-import facebook from '../../assets/svg/akar-icons_facebook-fill.svg'
-import linkedin from '../../assets/svg/akar-icons_linkedin-box-fill.svg'
-import twitter from '../../assets/svg/ant-design_twitter-circle-filled.svg'
+import syltherine from '@/assets/furniture/syltherine.png';
+import firstThumb from '@/assets/product-photo/Outdoor sofa set 2.png'
+import secondThumb from '@/assets/product-photo/Outdoor sofa set_2 1.png'
+import thirdThumb from '@/assets/product-photo/Stuart sofa 1.png'
+import fourthThumb from '@/assets/product-photo/Maya sofa three seater (1) 1.png'
+import firstPhoto from '@/assets/product-photo/Asgaard sofa 3.png'
+import secondPhoto from '@/assets/product-photo/image 76.png'
+import thirdPhoto from '@/assets/product-photo/image 82.png'
+import fourthPhoto from '@/assets/product-photo/image 99.png'
+import facebook from '@/assets/svg/akar-icons_facebook-fill.svg'
+import linkedin from '@/assets/svg/akar-icons_linkedin-box-fill.svg'
+import twitter from '@/assets/svg/ant-design_twitter-circle-filled.svg'
 import {Rating} from '@mui/material';
 import {Star} from '@mui/icons-material'
-import Radio from '../../components/radio/Radio';
-import InputPlusMinus from '../../components/input-plus-minus/InputPlusMinus';
-import CartButton from '../../components/cartButton/CartButton';
+import Radio from '@/components/radio/Radio';
+import InputPlusMinus from '@/components/input-plus-minus/InputPlusMinus';
+import CartButton from '@/components/cartButton/CartButton';
 import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
 import ProductDescription from '../product-description/ProductDescription';
 

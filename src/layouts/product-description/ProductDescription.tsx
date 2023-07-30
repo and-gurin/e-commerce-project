@@ -1,6 +1,6 @@
 import s from './ProductDescription.module.scss';
-import firstPhoto from '../../assets/product-description/Cloud sofa three seater + ottoman_1 1.png'
-import secondPhoto from '../../assets/product-description/Cloud sofa three seater + ottoman_2 1.png'
+import firstPhoto from '@/assets/product-description/Cloud sofa three seater + ottoman_1 1.png'
+import secondPhoto from '@/assets/product-description/Cloud sofa three seater + ottoman_2 1.png'
 import {ChangeEvent} from "react/ts5.0";
 
 type ValuePropsType = {

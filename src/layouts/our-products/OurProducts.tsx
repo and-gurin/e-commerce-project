@@ -1,16 +1,16 @@
 import {useState} from 'react';
-import grifo from '../../assets/furniture/grifo.png';
-import liviosa from '../../assets/furniture/leviosa.png';
-import lolito from '../../assets/furniture/lolito.png';
-import muggo from '../../assets/furniture/muggo.png';
-import pingky from '../../assets/furniture/pingky.png';
-import potty from '../../assets/furniture/potty.png';
-import respira from '../../assets/furniture/respira.png';
-import syltherine from '../../assets/furniture/syltherine.png';
+import grifo from '@/assets/furniture/grifo.png';
+import liviosa from '@/assets/furniture/leviosa.png';
+import lolito from '@/assets/furniture/lolito.png';
+import muggo from '@/assets/furniture/muggo.png';
+import pingky from '@/assets/furniture/pingky.png';
+import potty from '@/assets/furniture/potty.png';
+import respira from '@/assets/furniture/respira.png';
+import syltherine from '@/assets/furniture/syltherine.png';
 import s from './OurProducts.module.scss';
-import LikeIcon from '../../assets/svg/LikeIcon.tsx';
-import ShareIcon from '../../assets/svg/ShareIcon.tsx';
-import CompareIcon from '../../assets/svg/CompareIcon.tsx';
+import LikeIcon from '@/assets/svg/LikeIcon.tsx';
+import ShareIcon from '@/assets/svg/ShareIcon.tsx';
+import CompareIcon from '@/assets/svg/CompareIcon.tsx';
 import {Link} from "react-router-dom";
 
 
