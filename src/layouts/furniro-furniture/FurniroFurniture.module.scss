@@ -1,0 +1,17 @@
+@import 'src/styles/mixins.scss';
+
+.wrapper {
+  height: 830px;
+  @include background($cover:contain);
+  background-image: url('../../assets/furnio-furniture/furnio-furniture.png');
+}
+
+.superTitle {
+  @include font(2.0rem, 150%, 600, $graySecondColor);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}

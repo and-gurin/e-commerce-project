@@ -1,0 +1,14 @@
+@import 'src/styles/mixins.scss';
+@import 'src/styles/constants';
+
+.link {
+    @include font(1.6rem, normal, 500, $blackColor);
+    text-decoration: none;
+    transition: text-decoration 300ms ease;
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: $primaryColor;
+    transition: 300ms ease;
+}

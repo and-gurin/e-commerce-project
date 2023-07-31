@@ -1,0 +1,35 @@
+@import 'styles/placeholders';
+@import 'styles/constants';
+@import 'styles/mixins';
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    @extend %font-additional;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.body {
+    font-size: 1.6rem;
+}
+
+h1 {
+    @include font(5.2rem, 6.5rem, 700, $primaryColor);
+}
+
+h3 {
+    @include font(4.0rem, 120%, 700, $grayFirstColor);
+}
+
+h4 {
+    @include font(2.4rem, 150%, 600, $fontFirstColor);
+}

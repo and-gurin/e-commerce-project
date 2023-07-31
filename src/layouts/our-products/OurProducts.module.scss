@@ -1,0 +1,141 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.wrapper {
+  text-align: center;
+  margin-bottom: 69px;
+}
+
+.title {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.card {
+  position: relative;
+
+  &:hover .overlay {
+    display: flex;
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+
+  &:hover .overlay:hover {
+    opacity: 1;
+  }
+
+  &Img {
+    display: block;
+  }
+
+  &Badge {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    @include font(1.6rem, 50px, 500, $whiteColor);
+    position: absolute;
+    right: 24px;
+    top: 24px;
+  }
+
+  &BadgeDiscont {
+    background-color: $colorRedAccents;
+  }
+
+  &BadgeNew {
+    background-color: $colorGreenAccents;
+  }
+
+  &Header {
+    background-color: $bgLighterColor;
+    padding: 11px 0 30px 16px;
+    text-align: left;
+  }
+
+  &Title {
+    margin-bottom: 8px;
+  }
+
+  &Description {
+    @include font(1.6rem, 150%, 500, $grayThirdColor);
+    margin-bottom: 8px;
+  }
+
+  &Price {
+    display: flex;
+    gap: 16px;
+  }
+
+  &CurrentPrice {
+    @include font(2.0rem, 150%, 600, $grayFirstColor);
+  }
+
+  &OldPrice {
+    @include font(1.6rem, 150%, 400, $grayFourthColor);
+    text-decoration: line-through;
+  }
+}
+
+.overlay {
+  width: 285px;
+  height: 446px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+
+  &Button {
+    @include font(1.6rem, 150%, 600, $primaryColor);
+    background-color: $whiteColor;
+    border: none;
+    padding: 12px 55px;
+    cursor: pointer;
+    margin-bottom: 24px;
+
+    &:hover {
+      background-color: $bgLightColor;
+      transition: 300ms ease;
+    }
+  }
+
+  &LinkList {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  &Svg {
+    color: $whiteColor;
+
+    &:hover {
+      color: $primaryColor;
+      transition: 300ms ease;
+    }
+  }
+}
+
+.button {
+  @include font(1.6rem, 150%, 600, $primaryColor);
+  background-color: $whiteColor;
+  border: solid 1px $primaryColor;
+  padding: 12px 78px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $bgLightColor;
+    transition: 300ms ease;
+  }
+}
+
+
+

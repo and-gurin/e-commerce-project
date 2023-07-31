@@ -1,0 +1,71 @@
+@import 'src/styles/mixins.scss';
+
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.17);
+
+  &Title {
+    @include font(1.6rem, 150%, 500, $grayFifthColor);
+    margin-bottom: 50px;
+  }
+}
+
+.wrapper {
+  padding: 52px 100px;
+  display: flex;
+}
+
+.contacts {
+  margin-right: 144px;
+
+  &Title {
+    @include font(2.4rem, 2.4rem, 700, $blackColor);
+    margin-bottom: 58px;
+  }
+
+  &Address {
+    @include font(1.6rem, 150%, 400, $grayFifthColor);
+    font-style: normal;
+  }
+}
+
+.links {
+  margin-right: 144px;
+
+  &Nav {
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+  }
+}
+
+.help {
+  margin-right: 76px;
+}
+
+.input {
+  outline: none;
+  border: none;
+  border-bottom: solid 1px $blackColor;
+  padding: 3px 36px 3px 0;
+  margin-right: 11px;
+
+  &::placeholder {
+    @include font(1.4rem, 150%, 400, $grayFifthColor);
+  }
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px $blackColor;
+  @include font(1.4rem, 150%, 500, $blackColor);
+  text-transform: uppercase;
+}
+
+.copyright {
+  @include font(1.6rem, 150%, 400, $blackColor);
+  margin: 0 100px;
+  border-top: 1px solid rgba(0, 0, 0, 0.17);
+  padding: 29px 0;
+}
+

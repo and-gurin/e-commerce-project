@@ -1,0 +1,29 @@
+@import 'src/styles/mixins.scss';
+
+.title {
+  @include font(3.2rem, 4.8rem, 700, $fontFirstColor);
+  text-align: center;
+}
+
+.subtitle {
+  @include font(2.0rem, 3.0rem, 400, $fontSecondColor);
+  text-align: center;
+  margin-bottom: 62px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 56px;
+
+}
+
+.card {
+  border-radius: 10px;
+  margin-bottom: 23px;
+}
+
+.cardTitle {
+  text-align: center;
+}
