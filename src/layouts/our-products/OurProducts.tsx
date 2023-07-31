@@ -1,30 +1,38 @@
-import React from 'react';
-import grifo from '../../assets/furniture/grifo.png';
-import liviosa from '../../assets/furniture/leviosa.png';
-import lolito from '../../assets/furniture/lolito.png';
-import muggo from '../../assets/furniture/muggo.png';
-import pingky from '../../assets/furniture/pingky.png';
-import potty from '../../assets/furniture/potty.png';
-import respira from '../../assets/furniture/respira.png';
-import syltherine from '../../assets/furniture/syltherine.png';
-import s from './OurProducts.module.scss'
-import LikeIcon from "../../assets/svg/LikeIcon.tsx";
-import ShareIcon from "../../assets/svg/ShareIcon.tsx";
-import CompareIcon from "../../assets/svg/CompareIcon.tsx";
+import {useState} from 'react';
+import grifo from '@/assets/furniture/grifo.png';
+import liviosa from '@/assets/furniture/leviosa.png';
+import lolito from '@/assets/furniture/lolito.png';
+import muggo from '@/assets/furniture/muggo.png';
+import pingky from '@/assets/furniture/pingky.png';
+import potty from '@/assets/furniture/potty.png';
+import respira from '@/assets/furniture/respira.png';
+import syltherine from '@/assets/furniture/syltherine.png';
+import s from './OurProducts.module.scss';
+import LikeIcon from '@/assets/svg/LikeIcon.tsx';
+import ShareIcon from '@/assets/svg/ShareIcon.tsx';
+import CompareIcon from '@/assets/svg/CompareIcon.tsx';
 import {Link} from "react-router-dom";
 
 
 const width = '285px';
 const height = '301px'
 
-const products = [
+export type ProductType = {
+    id: number
+    src: string
+    alt: string
+    title: string
+    description: string
+    price: string
+    oldPrice: string
+    status: string
+}
+
+export const products: ProductType[] = [
     {
         id: 1,
         src: syltherine,
         alt: 'syltherine',
-        width,
-        height,
-        href: '#',
         title: 'Syltherine',
         description: 'Stylish cafe chair',
         price: '2.500.000',
@@ -35,9 +43,6 @@ const products = [
         id: 2,
         src: liviosa,
         alt: 'liviosa',
-        width,
-        height,
-        href: '#',
         title: 'Liviosa',
         description: 'Stylish cafe chair',
         price: '2.500.000',
@@ -48,9 +53,6 @@ const products = [
         id: 3,
         src: lolito,
         alt: 'lolito',
-        width,
-        height,
-        href: '#',
         title: 'Lolito',
         description: 'Luxury big sofa',
         price: '7.000.000',
@@ -61,9 +63,6 @@ const products = [
         id: 4,
         src: respira,
         alt: 'respira',
-        width,
-        height,
-        href: '#',
         title: 'Respira',
         description: 'Outdoor bar table and stool',
         price: '500.000',
@@ -74,9 +73,6 @@ const products = [
         id: 5,
         src: grifo,
         alt: 'grifo',
-        width,
-        height,
-        href: '#',
         title: 'Grifo',
         description: 'Night lamp',
         price: '1.500.000',
@@ -87,9 +83,6 @@ const products = [
         id: 6,
         src: muggo,
         alt: 'muggo',
-        width,
-        height,
-        href: '#',
         title: 'Muggo',
         description: 'Small mug',
         price: '150.000',
@@ -100,9 +93,6 @@ const products = [
         id: 7,
         src: pingky,
         alt: 'pingky',
-        width,
-        height,
-        href: '#',
         title: 'Pingky',
         description: 'Cute bed set',
         price: '7.000.000',
@@ -113,9 +103,6 @@ const products = [
         id: 8,
         src: potty,
         alt: 'potty',
-        width,
-        height,
-        href: '#',
         title: 'Potty',
         description: 'Minimalist flower pot',
         price: '1.500.000',
@@ -125,9 +112,9 @@ const products = [
 ]
 
 const links = [
-    {id: 1, src: <ShareIcon/>, href: '#'},
-    {id: 3, src: <CompareIcon/>, href: '#'},
-    {id: 2, src: <LikeIcon/>, href: '#'},
+    {id: 1, src: ShareIcon, href: '#'},
+    {id: 3, src: CompareIcon, href: '#'},
+    {id: 2, src: LikeIcon, href: '#'},
 ]
 
 const linksList = links.map(link => {
@@ -139,12 +126,12 @@ const linksList = links.map(link => {
     }
 )
 
-const Product = () => {
+export const Product = ({amount}: {amount: number}) => {
     return (
-        products.map(product => {
+        products.slice(0, amount).map(product => {
                 const productStatus = product.status === 'New' ? s.cardBadgeNew : s.cardBadgeDiscont
                 return (
-                    <Link to={product.href}>
+                    <Link to={'/products/' + product.id}>
                         <article className={s.card}>
                             <div className={s.overlay}>
                                 <button className={s.overlayButton}>
@@ -158,8 +145,8 @@ const Product = () => {
                                 className={s.cardImg}
                                 src={product.src}
                                 alt={product.alt}
-                                width={product.width}
-                                height={product.height}
+                                width={width}
+                                height={height}
                             />
                             <span className={product.status && s.cardBadge + ' ' + productStatus}>
                             {product.status}
@@ -183,20 +170,21 @@ const Product = () => {
     )
 }
 
-const OurProducts = () => {
+export const OurProducts = ({title}: {title: string}) => {
+
+    const [amount, setAmount] = useState(4)
+
     return (
         <section className={s.wrapper}>
             <h3 className={s.title}>
-                Our Products
+                {title}
             </h3>
             <div className={s.cards}>
-                <Product/>
+                <Product amount={amount}/>
             </div>
-            <button className={s.button}>
+            <button onClick={() => setAmount(amount + 4)} className={s.button}>
                 Show More
             </button>
         </section>
     );
 };
-
-export default OurProducts;

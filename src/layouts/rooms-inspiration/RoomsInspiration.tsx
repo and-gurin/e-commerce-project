@@ -1,12 +1,11 @@
-import React from 'react';
-import Slider from 'react-slick';
+import Slider from "react-slick";
 import 'slick-carousel/slick/slick.scss';
 import 'slick-carousel/slick/slick-theme.scss';
-import inner from '../../assets/rooms/inner.png'
-import dinner from '../../assets/rooms/dining.png'
-import bedroom from '../../assets/rooms/bedroom.png'
-import living from '../../assets/rooms/living.png'
-import sliderRight from '../../assets/svg/slider-right-arrow.svg'
+import inner from '@/assets/rooms/inner.png'
+import dinner from '@/assets/rooms/dining.png'
+import bedroom from '@/assets/rooms/bedroom.png'
+import living from '@/assets/rooms/living.png'
+import sliderRight from '@/assets/svg/slider-right-arrow.svg'
 import './RoomsInspiration.scss'
 import {Link} from 'react-router-dom';
 

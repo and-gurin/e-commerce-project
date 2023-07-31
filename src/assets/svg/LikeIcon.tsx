@@ -1,6 +1,5 @@
-import React from 'react';
 
-const LikeIcon = ({className}) => {
+const LikeIcon = ({className}:{className: string}) => {
     return (
         <svg className={className} width="50" height="24" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.99973 18.0361C-5.33333 10.6667 3.99999 2.66669 7.99973 7.72539C12 2.66669 21.3333 10.6667 7.99973 18.0361Z" stroke="currentColor" stroke-width="1.8"/>
