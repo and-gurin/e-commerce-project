@@ -16,16 +16,16 @@ const links = [
 
 const UserMenu = () => {
     const links = [
-        {id: 1, src: <AlertIcon/>, href: '#'},
-        {id: 2, src: <SearchIcon/>, href: '#'},
-        {id: 3, src: <HeartIcon/>, href: '#'},
-        {id: 4, src: <CartIcon/>, href: '#'},
+        {id: 1, icon: <AlertIcon/>, href: '#'},
+        {id: 2, icon: <SearchIcon/>, href: '#'},
+        {id: 3, icon: <HeartIcon/>, href: '#'},
+        {id: 4, icon: <CartIcon/>, href: '#'},
     ]
     return (
         links.map(link =>
             <li key={link.id}>
                 <Link to={link.href} className={s.svg}>
-                    {link.src}
+                    {link.icon}
                 </Link>
             </li>
         )
