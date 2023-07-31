@@ -1,0 +1,121 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.breadcrumbs {
+  background-color: $bgBaseColor;
+}
+
+.product {
+  display: flex;
+  gap: 105px;
+  padding: 0 100px;
+  margin: 0 auto;
+
+  &Images {
+    display: flex;
+    gap: 31px;
+  }
+
+  &Thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &Thumbnail {
+    border-radius: 10px;
+    background-color: $bgBaseColor;
+    width: 76px;
+    cursor: pointer;
+  }
+
+  &Photo {
+    width: 423px;
+    height: 500px;
+    background-color: $bgBaseColor;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  &Details {
+    padding-bottom: 56px;
+  }
+
+  &Title {
+    @include font(4.2rem, 150%, 400, $blackColor);
+  }
+
+  &Price {
+    @include font(2.4rem, 150%, 500, $grayFifthColor);
+    margin-bottom: 10px;
+  }
+
+  &Rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+  }
+
+  &Description {
+    @include font(1.3rem, 150%, 400, $blackColor);
+    margin-bottom: 22px;
+    max-width: 424px;
+  }
+
+  &Buttons {
+    display: flex;
+    gap: 18px;
+    border-bottom: 1px solid $bgGrayColor;
+    padding-bottom: 60px;
+    margin-bottom: 41px;
+  }
+}
+
+.radioGroup {
+  margin-bottom: 32px;
+
+  &Size {
+    @include font(1.3rem, 150%, 400, $grayFifthColor);
+    margin-bottom: 12px;
+  }
+
+  &Radio {
+    margin-bottom: 18px;
+  }
+}
+
+.technicalInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  &Wrapper {
+    @include font(1.6rem, 150%, 400, $grayFifthColor);
+  }
+
+  &Key {
+    min-width: 90px;
+    display: inline-block;
+  }
+
+  &Value {
+    color: $grayFifthColor;
+  }
+
+  &Share {
+    display: inline-flex;
+    gap: 25px;
+    align-items: center;
+  }
+}
+
+.description {
+  padding: 0 100px;
+  margin: 0 auto;
+}
+
+
+
+

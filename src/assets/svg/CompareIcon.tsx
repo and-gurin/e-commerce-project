@@ -1,6 +1,5 @@
-import React from 'react';
 
-const CompareIcon = ({className}) => {
+const CompareIcon = ({className}:{className: string}) => {
     return (
         <svg className={className} width="96" height="24" viewBox="0 0 96 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10.08 11L11.08 12L14.52 8.55L11 5L10 6L11.8 7.8H2.00004V9.2H11.82L10.08 11ZM5.86004 13L4.86004 12L1.42004 15.5L4.91004 19L5.91004 18L4.10004 16.2H14V14.8H4.10004L5.86004 13Z" fill="currentColor"/>

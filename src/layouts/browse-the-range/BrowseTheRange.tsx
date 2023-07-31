@@ -1,8 +1,7 @@
-import React from 'react';
 import s from './BrowseTheRange.module.scss'
-import dining from '../../assets/home-page/dining.png'
-import living from '../../assets/home-page/living.png'
-import bedroom from '../../assets/home-page/bedroom.png'
+import dining from '@/assets/home-page/dining.png'
+import living from '@/assets/home-page/living.png'
+import bedroom from '@/assets/home-page/bedroom.png'
 import {Link} from "react-router-dom";
 
 const width = '381px';

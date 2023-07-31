@@ -1,10 +1,11 @@
-import React from 'react';
-import s from './Navigation.module.scss'
+import s from './Nav.module.scss'
 import {Link} from "react-router-dom";
 
-const Navigation = ({links}) => {
+type LinkPropsType = {id: number, title: string, href: string}
+
+const Nav = ({links}: LinkPropsType[]) => {
     return (
-        links.map(link =>
+        links.map((link: LinkPropsType) =>
             <li key={link.id}>
                 <Link className={s.link} to={link.href}>
                     {link.title}
@@ -14,4 +15,4 @@ const Navigation = ({links}) => {
     );
 };
 
-export default Navigation;
+export default Nav;
