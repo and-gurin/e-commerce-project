@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage';
 import Footer from "./layouts/footer/Footer";
 import { Routes, Route } from 'react-router-dom';
 import SingleProductPage from "./pages/SingleProductPage";
+import ShopPage from "@/pages/ShopPage";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 
                 </>
                 }/>
+                <Route path='/shop' element={<ShopPage/>}/>
             </Routes>
 
             <Footer/>

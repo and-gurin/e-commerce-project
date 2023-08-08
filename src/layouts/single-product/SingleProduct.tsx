@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import s from './SingleProduct.module.scss';
-import {products, ProductType} from '../our-products/OurProducts';
+import {products, ProductType} from '@/state/store';
 import syltherine from '@/assets/furniture/syltherine.png';
 import firstThumb from '@/assets/product-photo/Outdoor sofa set 2.png'
 import secondThumb from '@/assets/product-photo/Outdoor sofa set_2 1.png'
@@ -166,7 +166,7 @@ const SingleProduct = () => {
         <>
             <section>
                 <nav className={s.breadcrumbs}>
-                    <Breadcrumbs title={product.title}/>
+                    <Breadcrumbs productTitle={product.title}/>
                 </nav>
                 <article className={s.product}>
                     <div className={s.productImages}>
@@ -209,7 +209,7 @@ const SingleProduct = () => {
                                     precision={0.5}/>
                             <svg width="2" height="37" style={{marginRight: '22px'}} viewBox="0 0 2 37" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
-                                <line x1="1" x2="1" y2="37" stroke="#9F9F9F" stroke-width="1"/>
+                                <line x1="1" x2="1" y2="37" stroke="#9F9F9F" strokeWidth="1"/>
                             </svg>
                             <Link className={s.radioGroupSize} to='#'>
                                 5 Customer Review

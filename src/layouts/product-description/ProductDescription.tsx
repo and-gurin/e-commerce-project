@@ -18,8 +18,6 @@ const ProductDescription = ({options, value, onChange}:
                                     options: DescriptionOptionsPropsType[],
                                     value: string,
                                     onChange: (e: ChangeEvent<HTMLInputElement>) => void}) => {
-    const description = options.find(option => option.id === value).value[0].paragraph
-    console.log(description)
     return (
         <>
             <div className={s.radioWrapper}>

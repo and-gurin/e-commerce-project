@@ -1,120 +1,19 @@
-import {useState} from 'react';
-import grifo from '@/assets/furniture/grifo.png';
-import liviosa from '@/assets/furniture/leviosa.png';
-import lolito from '@/assets/furniture/lolito.png';
-import muggo from '@/assets/furniture/muggo.png';
-import pingky from '@/assets/furniture/pingky.png';
-import potty from '@/assets/furniture/potty.png';
-import respira from '@/assets/furniture/respira.png';
-import syltherine from '@/assets/furniture/syltherine.png';
 import s from './OurProducts.module.scss';
 import LikeIcon from '@/assets/svg/LikeIcon.tsx';
 import ShareIcon from '@/assets/svg/ShareIcon.tsx';
 import CompareIcon from '@/assets/svg/CompareIcon.tsx';
-import {Link} from "react-router-dom";
-
+import {Link} from 'react-router-dom';
+import {products} from '@/state/store';
+import {useState} from "react";
+import ReactPaginate from "react-paginate";
 
 const width = '285px';
 const height = '301px'
 
-export type ProductType = {
-    id: number
-    src: string
-    alt: string
-    title: string
-    description: string
-    price: string
-    oldPrice: string
-    status: string
-}
-
-export const products: ProductType[] = [
-    {
-        id: 1,
-        src: syltherine,
-        alt: 'syltherine',
-        title: 'Syltherine',
-        description: 'Stylish cafe chair',
-        price: '2.500.000',
-        oldPrice: '3.500.000',
-        status: '-30%'
-    },
-    {
-        id: 2,
-        src: liviosa,
-        alt: 'liviosa',
-        title: 'Liviosa',
-        description: 'Stylish cafe chair',
-        price: '2.500.000',
-        oldPrice: '',
-        status: ''
-    },
-    {
-        id: 3,
-        src: lolito,
-        alt: 'lolito',
-        title: 'Lolito',
-        description: 'Luxury big sofa',
-        price: '7.000.000',
-        oldPrice: '14.000.000',
-        status: '-50%'
-    },
-    {
-        id: 4,
-        src: respira,
-        alt: 'respira',
-        title: 'Respira',
-        description: 'Outdoor bar table and stool',
-        price: '500.000',
-        oldPrice: '',
-        status: ''
-    },
-    {
-        id: 5,
-        src: grifo,
-        alt: 'grifo',
-        title: 'Grifo',
-        description: 'Night lamp',
-        price: '1.500.000',
-        oldPrice: '',
-        status: ''
-    },
-    {
-        id: 6,
-        src: muggo,
-        alt: 'muggo',
-        title: 'Muggo',
-        description: 'Small mug',
-        price: '150.000',
-        oldPrice: '',
-        status: 'New'
-    },
-    {
-        id: 7,
-        src: pingky,
-        alt: 'pingky',
-        title: 'Pingky',
-        description: 'Cute bed set',
-        price: '7.000.000',
-        oldPrice: '14.000.000',
-        status: '-50%'
-    },
-    {
-        id: 8,
-        src: potty,
-        alt: 'potty',
-        title: 'Potty',
-        description: 'Minimalist flower pot',
-        price: '1.500.000',
-        oldPrice: '',
-        status: 'New'
-    },
-]
-
 const links = [
-    {id: 1, src: ShareIcon, href: '#'},
-    {id: 3, src: CompareIcon, href: '#'},
-    {id: 2, src: LikeIcon, href: '#'},
+    {id: 1, src: <ShareIcon/>, href: '#'},
+    {id: 3, src: <CompareIcon/>, href: '#'},
+    {id: 2, src: <LikeIcon/>, href: '#'},
 ]
 
 const linksList = links.map(link => {
@@ -126,65 +25,100 @@ const linksList = links.map(link => {
     }
 )
 
-export const Product = ({amount}: {amount: number}) => {
-    return (
-        products.slice(0, amount).map(product => {
-                const productStatus = product.status === 'New' ? s.cardBadgeNew : s.cardBadgeDiscont
-                return (
-                    <Link to={'/products/' + product.id}>
-                        <article className={s.card}>
-                            <div className={s.overlay}>
-                                <button className={s.overlayButton}>
-                                    Add to cart
-                                </button>
-                                <div className={s.overlayLinkList}>
-                                    {linksList}
-                                </div>
+export const productList = products.map(product => {
+        const productStatus = product.status === 'New' ? s.cardBadgeNew : s.cardBadgeDiscont
+        return (
+            <>
+                <Link to={'/products/' + product.id} key={product.id}>
+                    <article className={s.card}>
+                        <div className={s.overlay}>
+                            <button className={s.overlayButton}>
+                                Add to cart
+                            </button>
+                            <div className={s.overlayLinkList}>
+                                {linksList}
                             </div>
-                            <img
-                                className={s.cardImg}
-                                src={product.src}
-                                alt={product.alt}
-                                width={width}
-                                height={height}
-                            />
-                            <span className={product.status && s.cardBadge + ' ' + productStatus}>
+                        </div>
+                        <img
+                            className={s.cardImg}
+                            src={product.src}
+                            alt={product.alt}
+                            width={width}
+                            height={height}
+                        />
+                        <span className={product.status && s.cardBadge + ' ' + productStatus}>
                             {product.status}
                             </span>
-                            <div className={s.cardHeader}>
-                                <h4 className={s.cardTitle}>{product.title}</h4>
-                                <p className={s.cardDescription}>
-                                    {product.description}
-                                </p>
-                                <div className={s.cardPrice}>
-                                    <p className={s.cardCurrentPrice}>{`Rp ${product.price}`}</p>
-                                    {product.oldPrice && <p className={s.cardOldPrice}>{`Rp ${product.oldPrice}`}</p>}
-                                </div>
+                        <div className={s.cardHeader}>
+                            <h4 className={s.cardTitle}>{product.title}</h4>
+                            <p className={s.cardDescription}>
+                                {product.description}
+                            </p>
+                            <div className={s.cardPrice}>
+                                <p className={s.cardCurrentPrice}>{`Rp ${product.price}`}</p>
+                                {product.oldPrice && <p className={s.cardOldPrice}>{`Rp ${product.oldPrice}`}</p>}
                             </div>
-                        </article>
-                    </Link>
-                )
-
-            }
+                        </div>
+                    </article>
+                </Link>
+            </>
         )
-    )
-}
+    }
+)
 
-export const OurProducts = ({title}: {title: string}) => {
+export const OurProducts = ({title, pagination, amount, onClick}:
+                                {
+                                    title?: string,
+                                    pagination?: boolean,
+                                    amount?: number
+                                    onClick?: () => void
+                                }) => {
 
-    const [amount, setAmount] = useState(4)
+    const [currentPage, setCurrentPage] = useState(0);
+
+    const itemsPerPage = 16;
+    const offset = currentPage * itemsPerPage;
+    const pageCount = Math.ceil(productList.length / itemsPerPage);
+
+
+    const currentPageData = amount ?
+        productList.slice(0, amount) :
+        productList.slice(offset, offset + itemsPerPage);
+
+    const handlePageClick = ({selected: selectedPage}) => {
+        setCurrentPage(selectedPage);
+        console.log(selectedPage)
+    };
 
     return (
         <section className={s.wrapper}>
-            <h3 className={s.title}>
-                {title}
-            </h3>
-            <div className={s.cards}>
-                <Product amount={amount}/>
+            {title &&
+                <h3 className={s.title}>
+                    {title}
+                </h3>
+            }
+
+            <div>
+                <div className={s.cards}>
+                    {currentPageData}
+                </div>
+                {pagination ?
+                    <ReactPaginate
+                        previousLabel={null}
+                        nextLabel={'Next'}
+                        pageCount={pageCount}
+                        onPageChange={handlePageClick}
+                        containerClassName={s.pagination}
+                        pageLinkClassName={s.paginationLinks}
+                        nextLinkClassName={s.paginationNext}
+                        activeLinkClassName={s.paginationActive}
+                        disabledLinkClassName={s.paginationDisable}
+                    />
+                    :
+                    <button onClick={onClick} className={s.button}>
+                        Show More
+                    </button>}
             </div>
-            <button onClick={() => setAmount(amount + 4)} className={s.button}>
-                Show More
-            </button>
         </section>
     );
 };

@@ -5,12 +5,24 @@
   @include font(1.6rem, 150%, 400, $grayFifthColor);
   margin-right: 14px;
 
+  &Wrapper {
+    padding: 38px 100px;
+    margin: 0 auto 35px;
+
+    &Logo {
+      background-image: url('/src/assets/background/breadcrumbs.png');
+      @include background();
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 316px;
+    }
+  }
 
   &List {
     display: flex;
     align-items: center;
-    padding: 38px 100px;
-    margin: 0 auto 35px;
   }
 
   &Arrow {

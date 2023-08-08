@@ -75,8 +75,8 @@ const RoomsInspiration = () => {
             </div>
             <div className='slider'>
                 <Slider {...settings}>
-                    {links.map(link =>
-                        <div>
+                    {links.map((link, index) =>
+                        <div key={index}>
                             <img src={link.src} alt=""/>
                             <div className='sliderAside'>
                                 <p className='sliderDescription'>
