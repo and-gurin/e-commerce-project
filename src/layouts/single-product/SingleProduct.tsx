@@ -247,7 +247,7 @@ const SingleProduct = () => {
                             <InputPlusMinus
                                 value={countValue}
                                 onClickPlus={() => setCountValue(countValue + 1)}
-                                onClickMinus={() => setCountValue(countValue - 1)}
+                                onClickMinus={() => setCountValue(countValue <= 0 ? countValue : countValue - 1)}
                             />
                             <CartButton title='Add To Cart'
                                         width='215px'

@@ -1,12 +1,12 @@
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import s from './Breadcrumbs.module.scss';
 import rightArrow from '@/assets/svg/right_arrow.svg';
 import verticalLine from '@/assets/svg/vertical-line.svg';
 import logoIcon from '@/assets/svg/logo-icon.svg';
 
 const Breadcrumbs = ({productTitle, pageTitle}: {productTitle?: string, pageTitle?: boolean}) => {
-    const path = window.location.hash;
-    const resultPath = path.slice(2, -2) === 'products' ? 'shop' : path.slice(2);
+    const location = useLocation();
+    const resultPath = location.pathname.slice(1, -2) === 'products' ? 'shop' : location.pathname.slice(1);
     let resultPathToUpperCase;
     if (resultPath) {
         resultPathToUpperCase =  resultPath[0].toUpperCase() + resultPath.slice(1)

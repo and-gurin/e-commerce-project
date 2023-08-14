@@ -1,0 +1,56 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.sortPanel {
+  background-color: $bgBaseColor;
+  margin-bottom: 63px;
+
+  &Wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 100px;
+  }
+}
+
+.filterMenu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+  &Buttons{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  &Button {
+    display: block;
+    cursor: pointer;
+  }
+
+  &Description {
+    @include font(1.6rem, 150%, 400, $blackColor);
+  }
+}
+
+.sortMenu {
+
+  &Label {
+    @include font(2.0rem, 150%, 400, $blackColor);
+    padding-right: 17px;
+  }
+
+  &Select {
+    outline: none;
+    border: none;
+    @include font(2.0rem, 150%, 400, $grayFifthColor);
+    padding: 12px 18px;
+    appearance: none;
+  }
+
+   select:nth-child(2) {
+     margin-right: 29px;
+   }
+
+}
