@@ -2,6 +2,7 @@ import Breadcrumbs from "@/layouts/breadcrumbs/Breadcrumbs";
 import {OurProducts} from "@/layouts/our-products/OurProducts";
 import SortPanel from "@/layouts/sort-panel/SortPanel";
 import {useState} from "react";
+import Advantages from "@/layouts/advantages/advantages";
 
 const ShopPage = () => {
 
@@ -19,6 +20,7 @@ const ShopPage = () => {
                        onChangeSort={onChangeSort}
                        />
             <OurProducts pagination={true} itemsPerPage={itemsPerPage} sort={sort}/>
+            <Advantages/>
         </>
     );
 };

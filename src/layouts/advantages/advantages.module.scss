@@ -1,0 +1,11 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.advantages {
+
+  &Wrapper {
+    height: 260px;
+    @include background();
+    background-image: url('../../assets/background/advantages.png');
+  }
+}
