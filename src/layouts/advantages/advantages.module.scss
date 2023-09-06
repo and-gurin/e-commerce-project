@@ -2,10 +2,35 @@
 @import 'src/styles/mixins';
 
 .advantages {
+  padding: 100px 55px;
+  background-color: $bgBaseColor;
 
-  &Wrapper {
-    height: 260px;
-    @include background();
-    background-image: url('../../assets/background/advantages.png');
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    display: flex;
+    gap: 10px;
+    color: $blackColor;
+  }
+
+  &__title {
+    @include font(2.5rem, 150%, 600, $blackColor);
+  }
+
+  &__subtitle {
+    @include font(2.0rem, 150%, 500, $grayThirdColor);
+  }
+
+  &__link:hover {
+    color: $primaryColor;
+    transition: 300ms ease;
+  }
+
+  &__link:hover .advantages__title{
+    color: $primaryColor;
+    transition: 300ms ease;
   }
 }

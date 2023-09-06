@@ -1,35 +1,35 @@
 @import 'src/styles/constants.scss';
 @import 'src/styles/mixins';
 
-.link {
-  @include font(1.6rem, 150%, 400, $grayFifthColor);
-  margin-right: 14px;
+.breadcrumb {
+  padding: 38px 100px;
+  margin: 0 auto 35px;
 
-  &Wrapper {
-    padding: 38px 100px;
-    margin: 0 auto 35px;
-
-    &Logo {
-      background-image: url('/src/assets/background/breadcrumbs.png');
-      @include background();
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 316px;
-    }
+  &__item {
+    @include font(1.6rem, 150%, 400, $grayFifthColor);
+    margin-right: 14px;
   }
 
-  &List {
+  &_logo {
+    background-image: url('/src/assets/background/breadcrumbs.png');
+    @include background();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 316px;
+  }
+
+  &__list {
     display: flex;
     align-items: center;
   }
 
-  &Arrow {
+  &__arrow {
     margin-right: 25px;
   }
 
-  &Title {
+  &__title {
     margin-left: 34px;
     @include font(1.6rem, 150%, 400, $blackColor);
   }

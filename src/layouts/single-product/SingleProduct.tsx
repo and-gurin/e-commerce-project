@@ -248,6 +248,7 @@ const SingleProduct = () => {
                                 value={countValue}
                                 onClickPlus={() => setCountValue(countValue + 1)}
                                 onClickMinus={() => setCountValue(countValue <= 0 ? countValue : countValue - 1)}
+                                onChange={(e) => setCountValue(e.currentTarget.value)}
                             />
                             <CartButton title='Add To Cart'
                                         width='215px'

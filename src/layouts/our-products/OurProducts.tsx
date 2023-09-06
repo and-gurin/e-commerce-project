@@ -38,7 +38,7 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
     //sort
     const sortProduct = (a, b, sortBy) => {
         if (sortBy === 'name') {
-            return a.title < b.title ? 1 : -1;
+            return a.title.localeCompare(b.title);
         }
         if (sortBy === 'price') {
             return parseInt(a.price) - parseInt(b.price);
