@@ -4,6 +4,7 @@ import {OurProducts} from '@/layouts/our-products/OurProducts';
 import RoomsInspiration from '@/layouts/rooms-inspiration/RoomsInspiration';
 import FurniroFurniture from "@/layouts/furniro-furniture/FurniroFurniture";
 import {useState} from "react";
+import React from 'react';
 
 const HomePage = () => {
 
@@ -16,6 +17,8 @@ const HomePage = () => {
             <OurProducts amount={amount}
                          onClick={() => setAmount(amount + 4)}
                          title={'Our Products'}
+                         itemsPerPage={2}
+                         sort={null}
                          pagination={false}/>
             <RoomsInspiration/>
             <FurniroFurniture/>

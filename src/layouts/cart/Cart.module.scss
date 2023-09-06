@@ -1,0 +1,121 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.cart {
+  display: flex;
+  justify-content: space-between;
+  padding: 75px 100px 80px;
+
+  &Table {
+    border-collapse: collapse;
+    margin-right: 30px;
+
+    &Header {
+      height: 55px;
+      background-color: $bgBaseColor;
+      @include font(1.6rem, 150%, 500, $blackColor);
+
+      &Image {
+        min-width: 145px;
+      }
+
+      &Product {
+        min-width: 177px;
+      }
+
+      &Price {
+        min-width: 177px;
+      }
+
+      &Quantity {
+        min-width: 106px;
+        text-align: center;
+      }
+
+      &Subtotal {
+        min-width: 161px;
+      }
+
+      &Delete {
+        min-width: 97px;
+      }
+
+    }
+
+    &Body {
+      height: 55px;
+      @include font(1.6rem, 150%, 400, $grayFifthColor);
+
+      &Image {
+        margin: 62px 0;
+        border-radius: 10px;
+      }
+
+      &Quantity {
+        text-align: center;
+        color: $blackColor;
+
+        &Inner {
+          width: 32px;
+          height: 32px;
+          border: 1px solid $grayFifthColor;
+          border-radius: 5px;
+          display: inline-block;
+          line-height: 32px;
+        }
+      }
+
+      &Subtotal {
+        color: $blackColor;
+      }
+
+      &Delete {
+        text-align: center;
+
+        &Button {
+          border: none;
+          background: transparent;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &Totals {
+    background-color: $bgBaseColor;
+    padding: 15px 75px 80px;
+    text-align: center;
+
+    &Title {
+      @include font(3.2rem, 150%, 600, $blackColor);
+      margin-bottom: 61px;
+    }
+
+    &Row {
+      display: flex;
+      justify-content: space-between;
+      min-width: 243px;
+    }
+
+    &Row:first-of-type {
+      margin-bottom: 31px;
+    }
+
+    &Row:first-of-type + div {
+      margin-bottom: 42px;
+    }
+
+    &Subtitle {
+      @include font(1.6rem, 150%, 500, $blackColor);
+    }
+
+    &Subtotal {
+      @include font(1.6rem, 150%, 500, $grayFifthColor);
+    }
+
+    &Total {
+      @include font(2.0rem, 150%, 500, $primaryColor);
+    }
+  }
+
+}

@@ -1,11 +1,14 @@
 import s from './OurProducts.module.scss';
-import LikeIcon from '@/assets/svg/LikeIcon.tsx';
-import ShareIcon from '@/assets/svg/ShareIcon.tsx';
-import CompareIcon from '@/assets/svg/CompareIcon.tsx';
 import {Link} from 'react-router-dom';
-import {products} from '@/state/store';
-import {useState} from "react";
+import {useState} from 'react';
 import ReactPaginate from "react-paginate";
+import React from 'react';
+import {ProductType} from '@/features/product/productSlice';
+import LikeIcon from '@/assets/svg/LikeIcon';
+import ShareIcon from '@/assets/svg/ShareIcon';
+import CompareIcon from '@/assets/svg/CompareIcon';
+import {productPrice} from '@/layouts/cart/Cart';
+import {useAppSelector} from "@/hooks/useAppDispatch";
 
 const width = '285px';
 const height = '301px'
@@ -31,12 +34,14 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
                                     pagination?: boolean,
                                     amount?: number
                                     onClick?: () => void
-                                    itemsPerPage?: number
-                                    sort: string
+                                    itemsPerPage: number
+                                    sort: string | null
                                 }) => {
 
+    const products = useAppSelector(state => state.product);
+
     //sort
-    const sortProduct = (a, b, sortBy) => {
+    const sortProduct = (a: ProductType, b: ProductType, sortBy: string | null) => {
         if (sortBy === 'name') {
             return a.title < b.title ? 1 : -1;
         }
@@ -46,45 +51,43 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
     };
 
     const productListSorted = sort === 'default' ? products :
-        [...products].sort((a, b) => sortProduct(a, b, sort));
+        [...products].sort((a, b) => sortProduct(a, b, sort) as number);
     const productList = productListSorted.map(product => {
             const productStatus = product.status === 'New' ? s.cardBadgeNew : s.cardBadgeDiscont;
-            const productPrice = product.price.length === 6 ? product.price.slice(0, 3) + '.' + product.price.slice(3, 15) :
-                product.price.length === 7 ? product.price[0] + '.' + product.price.slice(1, 4) + '.' + product.price.slice(4, 7) :
-                    product.price.length === 8 ? product.price.slice(0, 2) + product.price.slice(1, 3) + product.price.slice(4, 6) : null
+
             return (
-                    <Link to={'/products/' + product.id} key={product.id}>
-                        <article className={s.card}>
-                            <div className={s.overlay}>
-                                <button className={s.overlayButton}>
-                                    Add to cart
-                                </button>
-                                <div className={s.overlayLinkList}>
-                                    {linksList}
-                                </div>
+                <Link to={'/products/' + product.id} key={product.id}>
+                    <article className={s.card}>
+                        <div className={s.overlay}>
+                            <button className={s.overlayButton}>
+                                Add to cart
+                            </button>
+                            <div className={s.overlayLinkList}>
+                                {linksList}
                             </div>
-                            <img
-                                className={s.cardImg}
-                                src={product.src}
-                                alt={product.alt}
-                                width={width}
-                                height={height}
-                            />
-                            <span className={product.status && s.cardBadge + ' ' + productStatus}>
+                        </div>
+                        <img
+                            className={s.cardImg}
+                            src={product.src}
+                            alt={product.alt}
+                            width={width}
+                            height={height}
+                        />
+                        <span className={product.status && s.cardBadge + ' ' + productStatus}>
                             {product.status}
                             </span>
-                            <div className={s.cardHeader}>
-                                <h4 className={s.cardTitle}>{product.title}</h4>
-                                <p className={s.cardDescription}>
-                                    {product.description}
-                                </p>
-                                <div className={s.cardPrice}>
-                                    <p className={s.cardCurrentPrice}>{`Rp ${productPrice}`}</p>
-                                    {product.oldPrice && <p className={s.cardOldPrice}>{`Rp ${product.oldPrice}`}</p>}
-                                </div>
+                        <div className={s.cardHeader}>
+                            <h4 className={s.cardTitle}>{product.title}</h4>
+                            <p className={s.cardDescription}>
+                                {product.description}
+                            </p>
+                            <div className={s.cardPrice}>
+                                <p className={s.cardCurrentPrice}>{`Rp ${productPrice(product.price)}`}</p>
+                                {product.oldPrice && <p className={s.cardOldPrice}>{`Rp ${product.oldPrice}`}</p>}
                             </div>
-                        </article>
-                    </Link>
+                        </div>
+                    </article>
+                </Link>
             )
         }
     )
@@ -99,6 +102,7 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
         productList.slice(0, amount) :
         productList.slice(offset, offset + itemsPerPage);
 
+    // @ts-ignore
     const handlePageClick = ({selected: selectedPage}) => {
         setCurrentPage(selectedPage);
     };

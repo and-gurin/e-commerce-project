@@ -3,7 +3,8 @@ import gridViewIcon from '@/assets/svg/view-grid.svg';
 import listViewIcon from '@/assets/svg/view-list.svg';
 import verticalLine from '@/assets/svg/vertical-line.svg';
 import s from './SortPanel.module.scss'
-import {products} from '@/state/store';
+import React from 'react';
+import {useAppSelector} from "@/hooks/useAppDispatch";
 
 const filterMenuButtons = [
     {id: 1, icon: filterIcon, href: '#'},
@@ -24,6 +25,9 @@ const SortPanel = ({onChangeItemsPerPage, itemsPerPage, sort, onChangeSort}:
                            sort: string,
                            onChangeSort: (option: string) => void
                        }) => {
+
+    const products = useAppSelector(state => state.product);
+
     return (
         <section className={s.sortPanel}>
             <div className={s.sortPanelWrapper}>

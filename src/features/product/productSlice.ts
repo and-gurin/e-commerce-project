@@ -1,3 +1,4 @@
+import {createSlice} from '@reduxjs/toolkit';
 import syltherine from "@/assets/furniture/syltherine.png";
 import liviosa from "@/assets/furniture/leviosa.png";
 import lolito from "@/assets/furniture/lolito.png";
@@ -6,10 +7,6 @@ import grifo from "@/assets/furniture/grifo.png";
 import muggo from "@/assets/furniture/muggo.png";
 import pingky from "@/assets/furniture/pingky.png";
 import potty from "@/assets/furniture/potty.png";
-
-// export const productPrice = (price) =>  price.length=== 6 ? price.slice(0, 3) + '.' + price.slice(3, 15) :
-//     price.length === 7 ? price[0] + '.' + price.slice(1, 4) + '.' + price.slice(4, 7) :
-//         price.length === 8 ? price.slice(0, 2) + '.' + price.slice(2, 5) + '.' + price.slice(4, 7) : null;
 
 export type ProductType = {
     id: number
@@ -20,9 +17,10 @@ export type ProductType = {
     price: string
     oldPrice: string
     status: string
+    quantity: number
 }
 
-export const products: ProductType[] = [
+const initialState: ProductType[] = [
     {
         id: 1,
         src: syltherine,
@@ -31,7 +29,8 @@ export const products: ProductType[] = [
         description: 'Stylish cafe chair',
         price: '2500000',
         oldPrice: '3.500.000',
-        status: '-30%'
+        status: '-30%',
+        quantity: 1,
     },
     {
         id: 2,
@@ -41,7 +40,8 @@ export const products: ProductType[] = [
         description: 'Stylish cafe chair',
         price: '2500000',
         oldPrice: '',
-        status: ''
+        status: '',
+        quantity: 1,
     },
     {
         id: 3,
@@ -51,7 +51,8 @@ export const products: ProductType[] = [
         description: 'Luxury big sofa',
         price: '7000000',
         oldPrice: '14.000.000',
-        status: '-50%'
+        status: '-50%',
+        quantity: 1,
     },
     {
         id: 4,
@@ -61,7 +62,8 @@ export const products: ProductType[] = [
         description: 'Outdoor bar table and stool',
         price: '500000',
         oldPrice: '',
-        status: ''
+        status: '',
+        quantity: 1,
     },
     {
         id: 5,
@@ -71,7 +73,8 @@ export const products: ProductType[] = [
         description: 'Night lamp',
         price: '1500000',
         oldPrice: '',
-        status: ''
+        status: '',
+        quantity: 1,
     },
     {
         id: 6,
@@ -81,7 +84,8 @@ export const products: ProductType[] = [
         description: 'Small mug',
         price: '150000',
         oldPrice: '',
-        status: 'New'
+        status: 'New',
+        quantity: 1,
     },
     {
         id: 7,
@@ -91,7 +95,8 @@ export const products: ProductType[] = [
         description: 'Cute bed set',
         price: '7000000',
         oldPrice: '14.000.000',
-        status: '-50%'
+        status: '-50%',
+        quantity: 1,
     },
     {
         id: 8,
@@ -101,7 +106,8 @@ export const products: ProductType[] = [
         description: 'Minimalist flower pot',
         price: '1500000',
         oldPrice: '',
-        status: 'New'
+        status: 'New',
+        quantity: 1,
     },
     {
         id: 9,
@@ -111,7 +117,8 @@ export const products: ProductType[] = [
         description: 'Stylish cafe chair',
         price: '2500000',
         oldPrice: '3.500.000',
-        status: '-30%'
+        status: '-30%',
+        quantity: 1,
     },
     {
         id: 10,
@@ -121,7 +128,8 @@ export const products: ProductType[] = [
         description: 'Stylish cafe chair',
         price: '2500000',
         oldPrice: '',
-        status: ''
+        status: '',
+        quantity: 1,
     },
     {
         id: 11,
@@ -131,7 +139,8 @@ export const products: ProductType[] = [
         description: 'Luxury big sofa',
         price: '7000000',
         oldPrice: '14.000.000',
-        status: '-50%'
+        status: '-50%',
+        quantity: 1,
     },
     {
         id: 12,
@@ -141,7 +150,8 @@ export const products: ProductType[] = [
         description: 'Outdoor bar table and stool',
         price: '500000',
         oldPrice: '',
-        status: ''
+        status: '',
+        quantity: 1,
     },
     {
         id: 13,
@@ -151,7 +161,8 @@ export const products: ProductType[] = [
         description: 'Night lamp',
         price: '1500000',
         oldPrice: '',
-        status: ''
+        status: '',
+        quantity: 1,
     },
     {
         id: 14,
@@ -161,7 +172,8 @@ export const products: ProductType[] = [
         description: 'Small mug',
         price: '150000',
         oldPrice: '',
-        status: 'New'
+        status: 'New',
+        quantity: 1,
     },
     {
         id: 15,
@@ -171,7 +183,8 @@ export const products: ProductType[] = [
         description: 'Cute bed set',
         price: '7000000',
         oldPrice: '14.000.000',
-        status: '-50%'
+        status: '-50%',
+        quantity: 1,
     },
     {
         id: 16,
@@ -181,7 +194,8 @@ export const products: ProductType[] = [
         description: 'Minimalist flower pot',
         price: '1500000',
         oldPrice: '',
-        status: 'New'
+        status: 'New',
+        quantity: 1,
     },
     {
         id: 17,
@@ -191,7 +205,8 @@ export const products: ProductType[] = [
         description: 'Stylish cafe chair',
         price: '2500000',
         oldPrice: '3.500.000',
-        status: '-30%'
+        status: '-30%',
+        quantity: 1,
     },
     {
         id: 18,
@@ -201,7 +216,8 @@ export const products: ProductType[] = [
         description: 'Stylish cafe chair',
         price: '2500000',
         oldPrice: '',
-        status: ''
+        status: '',
+        quantity: 1,
     },
     {
         id: 19,
@@ -211,7 +227,8 @@ export const products: ProductType[] = [
         description: 'Luxury big sofa',
         price: '7000000',
         oldPrice: '14.000.000',
-        status: '-50%'
+        status: '-50%',
+        quantity: 1,
     },
     {
         id: 20,
@@ -221,7 +238,8 @@ export const products: ProductType[] = [
         description: 'Outdoor bar table and stool',
         price: '500000',
         oldPrice: '',
-        status: ''
+        status: '',
+        quantity: 1,
     },
     {
         id: 21,
@@ -231,7 +249,8 @@ export const products: ProductType[] = [
         description: 'Night lamp',
         price: '1500000',
         oldPrice: '',
-        status: ''
+        status: '',
+        quantity: 1,
     },
     {
         id: 22,
@@ -241,7 +260,8 @@ export const products: ProductType[] = [
         description: 'Small mug',
         price: '150000',
         oldPrice: '',
-        status: 'New'
+        status: 'New',
+        quantity: 1,
     },
     {
         id: 23,
@@ -251,7 +271,8 @@ export const products: ProductType[] = [
         description: 'Cute bed set',
         price: '7000000',
         oldPrice: '14.000.000',
-        status: '-50%'
+        status: '-50%',
+        quantity: 1,
     },
     {
         id: 24,
@@ -261,6 +282,19 @@ export const products: ProductType[] = [
         description: 'Minimalist flower pot',
         price: '1500000',
         oldPrice: '',
-        status: 'New'
+        status: 'New',
+        quantity: 1,
     },
 ]
+
+export type AppInitialStateType = ReturnType<typeof productSlice.getInitialState>
+
+export const productSlice = createSlice({
+        name: 'products',
+        initialState,
+        reducers:{}
+    }
+)
+
+//export const {getCurrentProduct} = productSlice.actions;
+export const productReducer = productSlice.reducer

@@ -1,8 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import s from './SingleProduct.module.scss';
-import {products, ProductType} from '@/state/store';
-import syltherine from '@/assets/furniture/syltherine.png';
+import {ProductType} from '@/features/product/productSlice';
 import firstThumb from '@/assets/product-photo/Outdoor sofa set 2.png'
 import secondThumb from '@/assets/product-photo/Outdoor sofa set_2 1.png'
 import thirdThumb from '@/assets/product-photo/Stuart sofa 1.png'
@@ -16,11 +15,15 @@ import linkedin from '@/assets/svg/akar-icons_linkedin-box-fill.svg'
 import twitter from '@/assets/svg/ant-design_twitter-circle-filled.svg'
 import {Rating} from '@mui/material';
 import {Star} from '@mui/icons-material'
-import Radio from '@/components/radio/Radio';
 import InputPlusMinus from '@/components/input-plus-minus/InputPlusMinus';
 import CartButton from '@/components/cartButton/CartButton';
 import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
 import ProductDescription from '../product-description/ProductDescription';
+import syltherine from "@/assets/furniture/syltherine.png";
+import {useAppDispatch, useAppSelector} from "@/hooks/useAppDispatch";
+import {addToCart} from "@/features/cart/cartSlice";
+import React from 'react';
+import Radio from '@/components/radio/Radio';
 
 const productThumbnail = [
     {
@@ -134,27 +137,35 @@ const shares = productAddition.shares.map((share, index) =>
 const SingleProduct = () => {
 
     const params = useParams();
-    const productId: number = +params.id;
+    let productId: number;
+    if (params.id != undefined) {
+        productId = +params.id
+    }
+    const products = useAppSelector(state => state.product);
+    const dispatch = useAppDispatch()
 
+    const [countValue, setCountValue] = useState(1)
     const [product, setProduct] = useState<ProductType>({
         id: 1,
         src: syltherine,
         alt: 'syltherine',
         title: 'Syltherine',
         description: 'Stylish cafe chair',
-        price: '2.500.000',
+        price: '2500000',
         oldPrice: '3.500.000',
-        status: '-30%'
+        status: '-30%',
+        quantity: 1,
     });
     const [photo, setPhoto] = useState<string>(productPhoto[0].src)
-    const [ratingValue, setRatingValue] = useState(4.5)
+    const [ratingValue, setRatingValue] = useState<number | null>(4.5)
     const [sizeValue, setSizeValue] = useState('')
     const [colorValue, setColorValue] = useState('')
-    const [countValue, setCountValue] = useState(1)
     const [descriptionValue, setDescriptionValue] = useState('description')
 
-    const singleProduct: ProductType = products.find(prod => prod.id === productId);
-
+    const singleProduct = products.find(prod => prod.id === productId);
+    const onClickAddToCart = () => {
+      dispatch(addToCart({product: product, quantity: countValue}))
+    }
 
     useEffect(() => {
         if (singleProduct) {
@@ -203,7 +214,7 @@ const SingleProduct = () => {
                                     sx={{fontSize: '20px', marginRight: '18px'}}
                                     emptyIcon={<Star fontSize="inherit" sx={{color: 'white'}}/>}
                                     value={ratingValue}
-                                    onChange={(event, newValue) => {
+                                    onChange={(_event, newValue) => {
                                         setRatingValue(newValue);
                                     }}
                                     precision={0.5}/>
@@ -254,6 +265,7 @@ const SingleProduct = () => {
                                         height='64px'
                                         borderRadius='15px'
                                         bg={'transparent'}
+                                        onClick={onClickAddToCart}
                             />
                             <CartButton title='+&nbsp;&nbsp;Compare'
                                         width='215px'
