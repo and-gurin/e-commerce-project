@@ -8,7 +8,8 @@ import LikeIcon from '@/assets/svg/LikeIcon';
 import ShareIcon from '@/assets/svg/ShareIcon';
 import CompareIcon from '@/assets/svg/CompareIcon';
 import {productPrice} from '@/layouts/cart/Cart';
-import {useAppSelector} from "@/hooks/useAppDispatch";
+import {useAppDispatch, useAppSelector} from "@/hooks/useAppDispatch";
+import {addToCart} from "@/features/cart/cartSlice";
 
 const width = '285px';
 const height = '301px'
@@ -28,7 +29,7 @@ const linksList = links.map(link => {
     }
 )
 
-export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, sort}:
+export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, sort, setIsOpen}:
                                 {
                                     title?: string,
                                     pagination?: boolean,
@@ -36,9 +37,11 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
                                     onClick?: () => void
                                     itemsPerPage: number
                                     sort: string | null
+                                    setIsOpen: (isOpen: boolean) => void
                                 }) => {
 
     const products = useAppSelector(state => state.product);
+    const dispatch = useAppDispatch()
 
     //sort
     const sortProduct = (a: ProductType, b: ProductType, sortBy: string | null) => {
@@ -52,14 +55,18 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
 
     const productListSorted = sort === 'default' ? products :
         [...products].sort((a, b) => sortProduct(a, b, sort) as number);
+
     const productList = productListSorted.map(product => {
             const productStatus = product.status === 'New' ? s.cardBadgeNew : s.cardBadgeDiscont;
-
+        const onClickAddToCart = () => {
+            dispatch(addToCart({product: product, quantity: 1}))
+            setIsOpen(true)
+        }
             return (
                 <Link to={'/products/' + product.id} key={product.id}>
                     <article className={s.card}>
                         <div className={s.overlay}>
-                            <button className={s.overlayButton}>
+                            <button className={s.overlayButton} onClick={onClickAddToCart}>
                                 Add to cart
                             </button>
                             <div className={s.overlayLinkList}>

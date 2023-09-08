@@ -6,7 +6,7 @@ import FurniroFurniture from "@/layouts/furniro-furniture/FurniroFurniture";
 import {useState} from "react";
 import React from 'react';
 
-const HomePage = () => {
+const HomePage = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
 
     const [amount, setAmount] = useState(4)
 
@@ -19,7 +19,9 @@ const HomePage = () => {
                          title={'Our Products'}
                          itemsPerPage={2}
                          sort={null}
-                         pagination={false}/>
+                         pagination={false}
+                         setIsOpen={setIsOpen}
+            />
             <RoomsInspiration/>
             <FurniroFurniture/>
         </>

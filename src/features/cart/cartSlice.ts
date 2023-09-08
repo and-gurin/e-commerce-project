@@ -34,5 +34,10 @@ export const cartSlice = createSlice({
     }
 )
 
+export const subtotalInCart = (productIn: ProductType[]) => productIn.reduce((acc, currentValue) => {
+    const productTotal = parseInt(currentValue.price) * currentValue.quantity
+    return acc + productTotal
+}, 0)
+
 export const {addToCart, deleteFromCart} = cartSlice.actions;
 export const cartReducer = cartSlice.reducer

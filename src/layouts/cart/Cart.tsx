@@ -1,9 +1,9 @@
 import deleteIcon from '@/assets/svg/delete.svg';
-import React from 'react';
 import s from './Cart.module.scss'
 import {useAppDispatch, useAppSelector} from '@/hooks/useAppDispatch';
-import {deleteFromCart} from '@/features/cart/cartSlice';
+import {deleteFromCart, subtotalInCart} from '@/features/cart/cartSlice';
 import CartButton from "@/components/cartButton/CartButton";
+import React from 'react';
 
 export const productPrice = (price: string) => price.length === 6 ? price.slice(0, 3) + '.' + price.slice(3, 15) :
     price.length === 7 ? price[0] + '.' + price.slice(1, 4) + '.' + price.slice(4, 7) :
@@ -16,10 +16,6 @@ const Cart = () => {
     const onClickDeleteProduct = (id: number) => {
         dispatch(deleteFromCart(id))
     }
-    const subtotalInCart = productIn.reduce((acc, currentValue) => {
-        const productTotal = parseInt(currentValue.price) * currentValue.quantity
-        return acc + productTotal
-    }, 0)
 
     return (
         <section className={s.cart}>
@@ -68,17 +64,18 @@ const Cart = () => {
                 <p className={s.cartTotalsTitle}>Cart Totals</p>
                 <div className={s.cartTotalsRow}>
                     <span className={s.cartTotalsSubtitle}>Subtotal</span>
-                    <span className={s.cartTotalsSubtotal}>{`Rp ${subtotalInCart.toLocaleString('en-US')}`}</span>
+                    <span className={s.cartTotalsSubtotal}>{`Rp ${subtotalInCart(productIn).toLocaleString('en-US')}`}</span>
                 </div>
                 <div className={s.cartTotalsRow}>
                     <span className={s.cartTotalsSubtitle}>Total</span>
-                    <span className={s.cartTotalsTotal}>{`Rp ${subtotalInCart.toLocaleString('en-US')}`}</span>
+                    <span className={s.cartTotalsTotal}>{`Rp ${subtotalInCart(productIn).toLocaleString('en-US')}`}</span>
                 </div>
                 <CartButton title='Check Out'
                             width='222px'
                             height='59px'
                             borderRadius='15px'
                             bg={'transparent'}
+                            link={'#'}
                             //onClick={onClickAddToCart}
                 />
             </aside>

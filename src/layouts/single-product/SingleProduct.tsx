@@ -90,32 +90,44 @@ const productAddition = {
     addition: [
         {
             value: [
-                {paragraph: 'Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and' +
-                        ' sound of Marshall, unplugs the chords, and takes the show on the road.'},
-                {paragraph: 'Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest ' +
+                {
+                    paragraph: 'Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and' +
+                        ' sound of Marshall, unplugs the chords, and takes the show on the road.'
+                },
+                {
+                    paragraph: 'Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest ' +
                         'speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange ' +
                         'and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls ' +
-                        'to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.'}
+                        'to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.'
+                }
             ],
             id: 'description',
             title: 'Description'
         },
         {
             value: [
-                {paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
-                    'audio which boasts a clear midrange and extended highs for a sound.'},
-                {paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
-                        'audio which boasts a clear midrange and extended highs for a sound.'},
+                {
+                    paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
+                        'audio which boasts a clear midrange and extended highs for a sound.'
+                },
+                {
+                    paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
+                        'audio which boasts a clear midrange and extended highs for a sound.'
+                },
             ],
             id: 'additional',
             title: 'Additional Information'
         },
         {
             value: [
-                {paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
-                        'audio which boasts a clear midrange and extended highs for a sound.'},
-                {paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
-                        'audio which boasts a clear midrange and extended highs for a sound.'},
+                {
+                    paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
+                        'audio which boasts a clear midrange and extended highs for a sound.'
+                },
+                {
+                    paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
+                        'audio which boasts a clear midrange and extended highs for a sound.'
+                },
             ],
             id: 'reviews',
             title: 'Reviews [5]'
@@ -134,7 +146,7 @@ const shares = productAddition.shares.map((share, index) =>
     </Link>
 )
 
-const SingleProduct = () => {
+const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
 
     const params = useParams();
     let productId: number;
@@ -164,7 +176,8 @@ const SingleProduct = () => {
 
     const singleProduct = products.find(prod => prod.id === productId);
     const onClickAddToCart = () => {
-      dispatch(addToCart({product: product, quantity: countValue}))
+        dispatch(addToCart({product: product, quantity: countValue}))
+        setIsOpen(true)
     }
 
     useEffect(() => {
@@ -266,12 +279,14 @@ const SingleProduct = () => {
                                         borderRadius='15px'
                                         bg={'transparent'}
                                         onClick={onClickAddToCart}
+                                        link={'#'}
                             />
                             <CartButton title='+&nbsp;&nbsp;Compare'
                                         width='215px'
                                         height='64px'
                                         borderRadius='15px'
                                         bg={'transparent'}
+                                        link={'#'}
                             />
                         </div>
                         <aside className={s.technicalInfo}>

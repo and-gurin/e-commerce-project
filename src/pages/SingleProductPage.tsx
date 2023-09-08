@@ -3,19 +3,21 @@ import {OurProducts} from "@/layouts/our-products/OurProducts";
 import {useState} from "react";
 import React from 'react';
 
-const SingleProductPage = () => {
+const SingleProductPage = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
 
     const [amount, setAmount] = useState(4)
 
     return (
         <>
-            <SingleProduct/>
+            <SingleProduct setIsOpen={setIsOpen}/>
             <OurProducts amount={amount}
                          onClick={() => setAmount(amount + 4)}
                          sort={null}
                          title={'Our Products'}
                          itemsPerPage={2}
-                         pagination={false}/>
+                         pagination={false}
+                         setIsOpen={setIsOpen}
+            />
         </>
     );
 };
