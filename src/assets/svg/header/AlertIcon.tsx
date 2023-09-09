@@ -1,3 +1,4 @@
+import React from "react";
 
 const AlertIcon = ({className}:{className?: string}) => {
     return (

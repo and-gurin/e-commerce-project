@@ -1,7 +1,13 @@
+import React from 'react';
 import ReactPaginate from 'react-paginate';
 import s from './Pagination.module.scss'
 
-const PaginationItems = ({pageCount, handlePageClick}) => {
+const PaginationItems = ({pageCount, handlePageClick}:
+                             {
+                                 pageCount: number,
+                                 handlePageClick: (e: {}) => void
+                             }
+) => {
 
     return (
         <ReactPaginate

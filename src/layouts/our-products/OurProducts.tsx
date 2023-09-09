@@ -110,8 +110,8 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
         productList.slice(offset, offset + itemsPerPage);
 
     // @ts-ignore
-    const handlePageClick = ({selected: selectedPage}) => {
-        setCurrentPage(selectedPage);
+    const handlePageClick = (e) => {
+        setCurrentPage(e.selected);
     };
 
     return (

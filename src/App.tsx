@@ -35,7 +35,7 @@ function App() {
 
                 </>
                 }/>
-                <Route path='/shop' element={<ShopPage/>}/>
+                <Route path='/shop' element={<ShopPage setIsOpen={setIsOpen}/>}/>
                 <Route path='/cart' element={<CartPage/>}/>
             </Routes>
 

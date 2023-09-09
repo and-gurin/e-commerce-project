@@ -1,3 +1,4 @@
+import React from "react";
 
 const SearchIcon = ({className}:{className?: string}) => {
     return (

@@ -1,7 +1,7 @@
 import s from './ProductDescription.module.scss';
 import firstPhoto from '@/assets/product-description/Cloud sofa three seater + ottoman_1 1.png'
 import secondPhoto from '@/assets/product-description/Cloud sofa three seater + ottoman_2 1.png'
-import {ChangeEvent} from "react/ts5.0";
+import React, {ChangeEvent} from 'react';
 
 type ValuePropsType = {
     paragraph: string
@@ -17,7 +17,9 @@ const ProductDescription = ({options, value, onChange}:
                                 {
                                     options: DescriptionOptionsPropsType[],
                                     value: string,
-                                    onChange: (e: ChangeEvent<HTMLInputElement>) => void}) => {
+                                    onChange: (e: ChangeEvent<HTMLInputElement>) => void}
+) => {
+
     return (
         <>
             <div className={s.radioWrapper}>
@@ -40,10 +42,10 @@ const ProductDescription = ({options, value, onChange}:
             </div>
             <div className={s.descriptionWrapper}>
                 <p className={s.description}>
-                    {options.find(option => option.id === value).value[0].paragraph}
+                    {options?.find(option => option.id === value)?.value[0].paragraph}
                 </p>
                 <p className={s.description}>
-                    {options.find(option => option.id === value).value[1].paragraph}
+                    {options?.find(option => option.id === value)?.value[1].paragraph}
                 </p>
             </div>
             <div className={s.imgWrapper}>

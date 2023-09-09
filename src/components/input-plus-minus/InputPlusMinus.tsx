@@ -1,3 +1,4 @@
+import React from 'react';
 import s from './InputPlusMinus.module.scss'
 
 const InputPlusMinus = ({onClickPlus, onClickMinus, value}:

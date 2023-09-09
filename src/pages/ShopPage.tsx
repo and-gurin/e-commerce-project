@@ -5,7 +5,7 @@ import Breadcrumbs from "@/layouts/breadcrumbs/Breadcrumbs";
 import {OurProducts} from "@/layouts/our-products/OurProducts";
 import SortPanel from "@/layouts/sort-panel/SortPanel";
 
-const ShopPage = () => {
+const ShopPage = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
 
     const [itemsPerPage, setItemsPerPage] = useState(16);
     const [sort, setSort] = useState('default');
@@ -18,7 +18,7 @@ const ShopPage = () => {
                        sort={sort}
                        onChangeSort={(e) => setSort(e)}
                        />
-            <OurProducts pagination={true} itemsPerPage={itemsPerPage} sort={sort}/>
+            <OurProducts setIsOpen={setIsOpen} pagination={true} itemsPerPage={itemsPerPage} sort={sort}/>
             <Advantages/>
         </>
     )
