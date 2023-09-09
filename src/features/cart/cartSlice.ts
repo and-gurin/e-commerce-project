@@ -11,19 +11,13 @@ export const cartSlice = createSlice({
             addToCart: (state, action: PayloadAction<{ product: ProductType, quantity: number }>) => {
                 const index = state.map(product => product.id).indexOf(action.payload.product.id);
                 if (state.length === 0) {
-                    const addedProduct = action.payload.product;
-                    const addedProductCopy = {...addedProduct};
-                    addedProductCopy.quantity = action.payload.quantity
-                    state.push(addedProductCopy);
+                    state.push({ ...action.payload.product, quantity: action.payload.quantity })
 
                 } else {
                     if (state.map(product => product.id).includes(action.payload.product.id)) {
                         state[index].quantity += action.payload.quantity
                     } else {
-                        const productInCart = action.payload.product;
-                        const productInCartCopy = {...productInCart};
-                        productInCartCopy.quantity = action.payload.quantity
-                        state.push(productInCartCopy);
+                        state.push({ ...action.payload.product, quantity: action.payload.quantity })
                     }
                 }
             },

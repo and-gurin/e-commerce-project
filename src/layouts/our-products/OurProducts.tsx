@@ -7,7 +7,6 @@ import {ProductType} from '@/features/product/productSlice';
 import LikeIcon from '@/assets/svg/LikeIcon';
 import ShareIcon from '@/assets/svg/ShareIcon';
 import CompareIcon from '@/assets/svg/CompareIcon';
-import {productPrice} from '@/layouts/cart/Cart';
 import {useAppDispatch, useAppSelector} from "@/hooks/useAppDispatch";
 import {addToCart} from "@/features/cart/cartSlice";
 
@@ -49,7 +48,7 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
             return a.title < b.title ? 1 : -1;
         }
         if (sortBy === 'price') {
-            return parseInt(a.price) - parseInt(b.price);
+            return a.price - b.price;
         }
     };
 
@@ -89,8 +88,8 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
                                 {product.description}
                             </p>
                             <div className={s.cardPrice}>
-                                <p className={s.cardCurrentPrice}>{`Rp ${productPrice(product.price)}`}</p>
-                                {product.oldPrice && <p className={s.cardOldPrice}>{`Rp ${product.oldPrice}`}</p>}
+                                <p className={s.cardCurrentPrice}>{`Rp ${product.price.toLocaleString('de-DE')}`}</p>
+                                {product.oldPrice && <p className={s.cardOldPrice}>{`Rp ${product.oldPrice.toLocaleString('de-DE')}`}</p>}
                             </div>
                         </div>
                     </article>

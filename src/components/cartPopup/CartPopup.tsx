@@ -27,7 +27,7 @@ const Popover = ({setIsOpen, productInCart,}:
                     <h4 className={s.popup__title}>Shopping Cart</h4>
                     <button className={s.popup__quitButton}
                             onClick={() => setIsOpen(false)}>
-                        <img src={quitIcon} width='16.63px' height='19px' alt='quit-icon'/>
+                        <img src={quitIcon} width='17px' height='19px' alt='quit-icon'/>
                     </button>
                 </div>
                 <div className={s.content}>

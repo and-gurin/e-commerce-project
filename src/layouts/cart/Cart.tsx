@@ -5,10 +5,6 @@ import {deleteFromCart, subtotalInCart} from '@/features/cart/cartSlice';
 import CartButton from "@/components/cartButton/CartButton";
 import React from 'react';
 
-export const productPrice = (price: string) => price.length === 6 ? price.slice(0, 3) + '.' + price.slice(3, 15) :
-    price.length === 7 ? price[0] + '.' + price.slice(1, 4) + '.' + price.slice(4, 7) :
-        price.length === 8 ? price.slice(0, 2) + '.' + price.slice(2, 5) + '.' + price.slice(4, 7) : null;
-
 const Cart = () => {
 
     const productIn = useAppSelector(state => state.cart);
@@ -33,7 +29,7 @@ const Cart = () => {
                 <tbody className={s.cartTableBody}>
                 {productIn.length ? productIn.map(product => {
 
-                            const subtotal = parseInt(product.price) * product.quantity;
+                            const subtotal = product.price * product.quantity;
                             const productPrice = +product.price;
 
                             return (
