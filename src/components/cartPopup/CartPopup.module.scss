@@ -1,0 +1,102 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.darkBG {
+  background: rgba(0, 0, 0, 0.20);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  position: fixed;
+}
+
+.popup {
+  background: white;
+  position: fixed;
+  right: 0;
+  z-index: 6;
+  height: 100%;
+  padding: 27px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 42px;
+    min-width: 346px;
+  }
+
+  &__title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+    padding-bottom: 26px;
+    width: 288px;
+  }
+
+  &__quitButton {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(0, 0, 0, 0.17);
+  }
+}
+
+.content {
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__param {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__img {
+    border-radius: 10px;
+  }
+
+  &__title {
+    @include font(1.6rem, 150%, 400, $blackColor);
+  }
+
+  &__quantity {
+    @include font(1.6rem, 150%, 300, $blackColor);
+  }
+
+  &__quantityX {
+    @include font(1.2rem, 150%, 300, $blackColor);
+  }
+
+  &__price {
+    @include font(1.2rem, 150%, 300, $primaryColor);
+  }
+
+  &__deleteButton {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__subtotal {
+    @include font(1.6rem, 150%, 600, $primaryColor);
+    margin-left: auto;
+    display: inline-block;
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    margin-bottom: 23px;
+  }
+}

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import s from './advantages.module.scss'
 import Trophy from "@/assets/svg/Trophy";
 import Guarantee from "@/assets/svg/Guarantee";

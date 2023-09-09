@@ -1,11 +1,14 @@
 import s from './OurProducts.module.scss';
-import LikeIcon from '@/assets/svg/LikeIcon.tsx';
-import ShareIcon from '@/assets/svg/ShareIcon.tsx';
-import CompareIcon from '@/assets/svg/CompareIcon.tsx';
 import {Link} from 'react-router-dom';
-import {products} from '@/state/store';
-import {useState} from "react";
+import {useState} from 'react';
 import ReactPaginate from "react-paginate";
+import React from 'react';
+import {ProductType} from '@/features/product/productSlice';
+import LikeIcon from '@/assets/svg/LikeIcon';
+import ShareIcon from '@/assets/svg/ShareIcon';
+import CompareIcon from '@/assets/svg/CompareIcon';
+import {useAppDispatch, useAppSelector} from "@/hooks/useAppDispatch";
+import {addToCart} from "@/features/cart/cartSlice";
 
 const width = '285px';
 const height = '301px'
@@ -25,66 +28,72 @@ const linksList = links.map(link => {
     }
 )
 
-export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, sort}:
+export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, sort, setIsOpen}:
                                 {
                                     title?: string,
                                     pagination?: boolean,
                                     amount?: number
                                     onClick?: () => void
-                                    itemsPerPage?: number
-                                    sort: string
+                                    itemsPerPage: number
+                                    sort: string | null
+                                    setIsOpen: (isOpen: boolean) => void
                                 }) => {
 
+    const products = useAppSelector(state => state.product);
+    const dispatch = useAppDispatch()
+
     //sort
-    const sortProduct = (a, b, sortBy) => {
+    const sortProduct = (a: ProductType, b: ProductType, sortBy: string | null) => {
         if (sortBy === 'name') {
             return a.title.localeCompare(b.title);
         }
         if (sortBy === 'price') {
-            return parseInt(a.price) - parseInt(b.price);
+            return a.price - b.price;
         }
     };
 
     const productListSorted = sort === 'default' ? products :
-        [...products].sort((a, b) => sortProduct(a, b, sort));
+        [...products].sort((a, b) => sortProduct(a, b, sort) as number);
+
     const productList = productListSorted.map(product => {
             const productStatus = product.status === 'New' ? s.cardBadgeNew : s.cardBadgeDiscont;
-            const productPrice = product.price.length === 6 ? product.price.slice(0, 3) + '.' + product.price.slice(3, 15) :
-                product.price.length === 7 ? product.price[0] + '.' + product.price.slice(1, 4) + '.' + product.price.slice(4, 7) :
-                    product.price.length === 8 ? product.price.slice(0, 2) + product.price.slice(1, 3) + product.price.slice(4, 6) : null
+        const onClickAddToCart = () => {
+            dispatch(addToCart({product: product, quantity: 1}))
+            setIsOpen(true)
+        }
             return (
-                    <Link to={'/products/' + product.id} key={product.id}>
-                        <article className={s.card}>
-                            <div className={s.overlay}>
-                                <button className={s.overlayButton}>
-                                    Add to cart
-                                </button>
-                                <div className={s.overlayLinkList}>
-                                    {linksList}
-                                </div>
+                <Link to={'/products/' + product.id} key={product.id}>
+                    <article className={s.card}>
+                        <div className={s.overlay}>
+                            <button className={s.overlayButton} onClick={onClickAddToCart}>
+                                Add to cart
+                            </button>
+                            <div className={s.overlayLinkList}>
+                                {linksList}
                             </div>
-                            <img
-                                className={s.cardImg}
-                                src={product.src}
-                                alt={product.alt}
-                                width={width}
-                                height={height}
-                            />
-                            <span className={product.status && s.cardBadge + ' ' + productStatus}>
+                        </div>
+                        <img
+                            className={s.cardImg}
+                            src={product.src}
+                            alt={product.alt}
+                            width={width}
+                            height={height}
+                        />
+                        <span className={product.status && s.cardBadge + ' ' + productStatus}>
                             {product.status}
                             </span>
-                            <div className={s.cardHeader}>
-                                <h4 className={s.cardTitle}>{product.title}</h4>
-                                <p className={s.cardDescription}>
-                                    {product.description}
-                                </p>
-                                <div className={s.cardPrice}>
-                                    <p className={s.cardCurrentPrice}>{`Rp ${productPrice}`}</p>
-                                    {product.oldPrice && <p className={s.cardOldPrice}>{`Rp ${product.oldPrice}`}</p>}
-                                </div>
+                        <div className={s.cardHeader}>
+                            <h4 className={s.cardTitle}>{product.title}</h4>
+                            <p className={s.cardDescription}>
+                                {product.description}
+                            </p>
+                            <div className={s.cardPrice}>
+                                <p className={s.cardCurrentPrice}>{`Rp ${product.price.toLocaleString('de-DE')}`}</p>
+                                {product.oldPrice && <p className={s.cardOldPrice}>{`Rp ${product.oldPrice.toLocaleString('de-DE')}`}</p>}
                             </div>
-                        </article>
-                    </Link>
+                        </div>
+                    </article>
+                </Link>
             )
         }
     )
@@ -99,8 +108,9 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
         productList.slice(0, amount) :
         productList.slice(offset, offset + itemsPerPage);
 
-    const handlePageClick = ({selected: selectedPage}) => {
-        setCurrentPage(selectedPage);
+    // @ts-ignore
+    const handlePageClick = (e) => {
+        setCurrentPage(e.selected);
     };
 
     return (

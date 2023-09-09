@@ -1,5 +1,5 @@
 import s from './Radio.module.scss'
-import {ChangeEvent} from "react/ts5.0";
+import React, { ChangeEvent } from 'react';
 
 type OptionsPropsType = {
     value: string,
@@ -8,8 +8,8 @@ type OptionsPropsType = {
 }
 
 const Radio = ({value, onChange, options}: {value: string, onChange: (e: ChangeEvent<HTMLInputElement>) => void, options: OptionsPropsType[]}) => {
-    return (
-        options.map((option, index) =>
+    return <>
+        { options.map((option, index) =>
             <label key={index} htmlFor={option.id} className={s.radioLabel}>
                 <input
                     type="radio"
@@ -25,8 +25,8 @@ const Radio = ({value, onChange, options}: {value: string, onChange: (e: ChangeE
                 {option.title && option.title}
             </span>
             </label>
-        )
-    );
+        )}
+    </>
 };
 
 export default Radio;

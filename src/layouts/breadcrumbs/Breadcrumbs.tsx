@@ -3,6 +3,7 @@ import s from './Breadcrumbs.module.scss';
 import rightArrow from '@/assets/svg/right_arrow.svg';
 import verticalLine from '@/assets/svg/vertical-line.svg';
 import logoIcon from '@/assets/svg/logo-icon.svg';
+import React from 'react';
 
 const Breadcrumbs = ({productTitle, pageTitle}: {productTitle?: string, pageTitle?: boolean}) => {
     const location = useLocation();

@@ -1,3 +1,4 @@
+import React from "react";
 
 const ShareIcon = ({className}:{className?: string}) => {
     return (

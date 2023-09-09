@@ -1,8 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import s from './SingleProduct.module.scss';
-import {products, ProductType} from '@/state/store';
-import syltherine from '@/assets/furniture/syltherine.png';
+import {ProductType} from '@/features/product/productSlice';
 import firstThumb from '@/assets/product-photo/Outdoor sofa set 2.png'
 import secondThumb from '@/assets/product-photo/Outdoor sofa set_2 1.png'
 import thirdThumb from '@/assets/product-photo/Stuart sofa 1.png'
@@ -16,11 +15,15 @@ import linkedin from '@/assets/svg/akar-icons_linkedin-box-fill.svg'
 import twitter from '@/assets/svg/ant-design_twitter-circle-filled.svg'
 import {Rating} from '@mui/material';
 import {Star} from '@mui/icons-material'
-import Radio from '@/components/radio/Radio';
 import InputPlusMinus from '@/components/input-plus-minus/InputPlusMinus';
 import CartButton from '@/components/cartButton/CartButton';
 import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
 import ProductDescription from '../product-description/ProductDescription';
+import syltherine from "@/assets/furniture/syltherine.png";
+import {useAppDispatch, useAppSelector} from "@/hooks/useAppDispatch";
+import {addToCart} from "@/features/cart/cartSlice";
+import React from 'react';
+import Radio from '@/components/radio/Radio';
 
 const productThumbnail = [
     {
@@ -87,32 +90,44 @@ const productAddition = {
     addition: [
         {
             value: [
-                {paragraph: 'Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and' +
-                        ' sound of Marshall, unplugs the chords, and takes the show on the road.'},
-                {paragraph: 'Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest ' +
+                {
+                    paragraph: 'Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and' +
+                        ' sound of Marshall, unplugs the chords, and takes the show on the road.'
+                },
+                {
+                    paragraph: 'Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest ' +
                         'speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange ' +
                         'and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls ' +
-                        'to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.'}
+                        'to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.'
+                }
             ],
             id: 'description',
             title: 'Description'
         },
         {
             value: [
-                {paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
-                    'audio which boasts a clear midrange and extended highs for a sound.'},
-                {paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
-                        'audio which boasts a clear midrange and extended highs for a sound.'},
+                {
+                    paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
+                        'audio which boasts a clear midrange and extended highs for a sound.'
+                },
+                {
+                    paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
+                        'audio which boasts a clear midrange and extended highs for a sound.'
+                },
             ],
             id: 'additional',
             title: 'Additional Information'
         },
         {
             value: [
-                {paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
-                        'audio which boasts a clear midrange and extended highs for a sound.'},
-                {paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
-                        'audio which boasts a clear midrange and extended highs for a sound.'},
+                {
+                    paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
+                        'audio which boasts a clear midrange and extended highs for a sound.'
+                },
+                {
+                    paragraph: 'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced ' +
+                        'audio which boasts a clear midrange and extended highs for a sound.'
+                },
             ],
             id: 'reviews',
             title: 'Reviews [5]'
@@ -131,30 +146,39 @@ const shares = productAddition.shares.map((share, index) =>
     </Link>
 )
 
-const SingleProduct = () => {
+const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
 
     const params = useParams();
-    const productId: number = +params.id;
+    let productId: number;
+    if (params.id != undefined) {
+        productId = +params.id
+    }
+    const products = useAppSelector(state => state.product);
+    const dispatch = useAppDispatch()
 
+    const [countValue, setCountValue] = useState(1)
     const [product, setProduct] = useState<ProductType>({
         id: 1,
         src: syltherine,
         alt: 'syltherine',
         title: 'Syltherine',
         description: 'Stylish cafe chair',
-        price: '2.500.000',
+        price: '2500000',
         oldPrice: '3.500.000',
-        status: '-30%'
+        status: '-30%',
+        quantity: 1,
     });
     const [photo, setPhoto] = useState<string>(productPhoto[0].src)
-    const [ratingValue, setRatingValue] = useState(4.5)
+    const [ratingValue, setRatingValue] = useState<number | null>(4.5)
     const [sizeValue, setSizeValue] = useState('')
     const [colorValue, setColorValue] = useState('')
-    const [countValue, setCountValue] = useState(1)
     const [descriptionValue, setDescriptionValue] = useState('description')
 
-    const singleProduct: ProductType = products.find(prod => prod.id === productId);
-
+    const singleProduct = products.find(prod => prod.id === productId);
+    const onClickAddToCart = () => {
+        dispatch(addToCart({product: product, quantity: countValue}))
+        setIsOpen(true)
+    }
 
     useEffect(() => {
         if (singleProduct) {
@@ -203,7 +227,7 @@ const SingleProduct = () => {
                                     sx={{fontSize: '20px', marginRight: '18px'}}
                                     emptyIcon={<Star fontSize="inherit" sx={{color: 'white'}}/>}
                                     value={ratingValue}
-                                    onChange={(event, newValue) => {
+                                    onChange={(_event, newValue) => {
                                         setRatingValue(newValue);
                                     }}
                                     precision={0.5}/>
@@ -255,12 +279,15 @@ const SingleProduct = () => {
                                         height='64px'
                                         borderRadius='15px'
                                         bg={'transparent'}
+                                        onClick={onClickAddToCart}
+                                        link={'#'}
                             />
                             <CartButton title='+&nbsp;&nbsp;Compare'
                                         width='215px'
                                         height='64px'
                                         borderRadius='15px'
                                         bg={'transparent'}
+                                        link={'#'}
                             />
                         </div>
                         <aside className={s.technicalInfo}>

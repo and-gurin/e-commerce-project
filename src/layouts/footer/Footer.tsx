@@ -1,5 +1,6 @@
 import s from './Footer.module.scss'
 import Navigation from "@/components/navigation/Nav";
+import React from 'react';
 
 const links = [
     {id: 1, title: 'Home', href: '/'},
