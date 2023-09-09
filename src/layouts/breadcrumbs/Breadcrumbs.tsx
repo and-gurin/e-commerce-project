@@ -14,7 +14,7 @@ const Breadcrumbs = ({productTitle, pageTitle}: {productTitle?: string, pageTitl
     }
 
     return (
-        <nav className={pageTitle ? s.linkWrapperLogo : s.linkWrapper}>
+        <nav className={pageTitle ? s.breadcrumb_logo : s.breadcrumb}>
             {pageTitle &&
                 <>
                     <img src={logoIcon} alt="logo-icon" width='50px' height='33px'/>
@@ -22,23 +22,23 @@ const Breadcrumbs = ({productTitle, pageTitle}: {productTitle?: string, pageTitl
                 </>
 
             }
-            <ul className={s.linkList}>
+            <ul className={s.breadcrumb__list}>
                 <Link to={'/'}>
-                    <li className={s.link}>
+                    <li className={s.breadcrumb__item}>
                         {'Home'}
                     </li>
                 </Link>
-                <img src={rightArrow} className={s.linkArrow} alt='right-arrow'/>
+                <img src={rightArrow} className={s.breadcrumb__arrow} alt='right-arrow'/>
                 <Link to={'/shop'}>
-                    <li className={s.link}>
+                    <li className={s.breadcrumb__item}>
                         {resultPathToUpperCase}
                     </li>
                 </Link>
                 {productTitle &&
                     <>
-                        <img src={rightArrow} className={s.linkArrow} alt='right-arrow'/>
+                        <img src={rightArrow} className={s.breadcrumb__arrow} alt='right-arrow'/>
                         <img src={verticalLine} alt='vertical-line'/>
-                        <div className={s.linkTitle}>
+                        <div className={s.breadcrumb__title}>
                             {productTitle}
                         </div>
                     </>
