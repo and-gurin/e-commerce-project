@@ -1,3 +1,4 @@
+import React from 'react';
 import s from './NewCollection.module.scss'
 
 const NewCollection = () => {

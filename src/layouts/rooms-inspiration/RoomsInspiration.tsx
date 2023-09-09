@@ -8,6 +8,7 @@ import living from '@/assets/rooms/living.png'
 import sliderRight from '@/assets/svg/slider-right-arrow.svg'
 import './RoomsInspiration.scss'
 import {Link} from 'react-router-dom';
+import React from "react";
 
 const links = [
     {src:inner, title: 'Inner Peace', description: '01 - Bedroom',},
@@ -25,7 +26,6 @@ const RoomsInspiration = () => {
         speed: 400,
         slidesToShow: 3,
         slidesToScroll: 1,
-        lazyLoad: true,
         cssEase: "linear",
         nextArrow: <svg width='64' height='64' viewBox='0 0 78 78' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <g id='Ellipse 4' filter='url(#filter0_d_117_484)'>
@@ -75,8 +75,8 @@ const RoomsInspiration = () => {
             </div>
             <div className='slider'>
                 <Slider {...settings}>
-                    {links.map(link =>
-                        <div>
+                    {links.map((link, index) =>
+                        <div key={index}>
                             <img src={link.src} alt=""/>
                             <div className='sliderAside'>
                                 <p className='sliderDescription'>

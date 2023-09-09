@@ -137,5 +137,43 @@
   }
 }
 
+.pagination {
+  margin: 38px auto 32px;
+  display: inline-flex;
+  list-style: none;
+  outline: none;
+  gap: 38px;
+  @include font(2.0rem, 150%, 300, $blackColor);
+
+  &Links {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: $bgBaseColor;
+    display: inline-block;
+    line-height: 61px;
+    cursor: pointer;
+  }
+
+  &Next {
+    padding: 0 28px;
+    background-color: $bgBaseColor;
+    display: inline-block;
+    line-height: 61px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &Active {
+    background-color: $primaryColor;
+    color: $whiteColor;
+  }
+
+  &Disable {
+    background-color: $bgLightestColor;
+    color: $graySixthColor;
+  }
+}
+
 
 

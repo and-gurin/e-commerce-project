@@ -3,6 +3,7 @@ import dining from '@/assets/home-page/dining.png'
 import living from '@/assets/home-page/living.png'
 import bedroom from '@/assets/home-page/bedroom.png'
 import {Link} from "react-router-dom";
+import React from 'react';
 
 const width = '381px';
 const height = '480px' ;
@@ -14,22 +15,24 @@ const cards = [
 ]
 
 const Card = () => {
-    return (
-        cards.map(card =>
-            <article key={card.id}>
-                <Link to={card.href}>
-                    <img src={card.src}
-                         className={s.card}
-                         width={card.width}
-                         height={card.height}
-                         alt={card.alt}/>
-                    <h4 className={s.cardTitle}>
-                        {card.title}
-                    </h4>
-                </Link>
-            </article>
-        )
-    )
+    return <>
+        {
+            cards.map(card =>
+                <article key={card.id}>
+                    <Link to={card.href}>
+                        <img src={card.src}
+                             className={s.card}
+                             width={card.width}
+                             height={card.height}
+                             alt={card.alt}/>
+                        <h4 className={s.cardTitle}>
+                            {card.title}
+                        </h4>
+                    </Link>
+                </article>
+            )
+        }
+    </>
 }
 
 const BrowseTheRange = () => {
