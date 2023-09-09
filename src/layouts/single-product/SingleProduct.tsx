@@ -163,8 +163,8 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
         alt: 'syltherine',
         title: 'Syltherine',
         description: 'Stylish cafe chair',
-        price: '2500000',
-        oldPrice: '3.500.000',
+        price: 2500000,
+        oldPrice: 3500000,
         status: '-30%',
         quantity: 1,
     });
