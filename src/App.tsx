@@ -8,6 +8,7 @@ import CartPage from '@/pages/CartPage';
 import React, {useEffect, useState} from 'react';
 import CartPopup from "@/components/cartPopup/CartPopup";
 import {useAppSelector} from "@/hooks/useAppDispatch";
+import ComparisonPage from "@/pages/ComparisonPage";
 
 function App() {
 
@@ -37,6 +38,14 @@ function App() {
                 }/>
                 <Route path='/shop' element={<ShopPage setIsOpen={setIsOpen}/>}/>
                 <Route path='/cart' element={<CartPage/>}/>
+                <Route path='/comparison/*' element={
+                    <>
+                        <Routes>
+                            <Route path='/:id' element={<ComparisonPage/>}/>
+                        </Routes>
+
+                    </>
+                }/>
             </Routes>
 
             <Footer/>

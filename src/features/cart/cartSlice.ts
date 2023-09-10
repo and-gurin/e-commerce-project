@@ -29,7 +29,7 @@ export const cartSlice = createSlice({
 )
 
 export const subtotalInCart = (productIn: ProductType[]) => productIn.reduce((acc, currentValue) => {
-    const productTotal = parseInt(currentValue.price) * currentValue.quantity
+    const productTotal = currentValue.price * currentValue.quantity
     return acc + productTotal
 }, 0)
 

@@ -1,0 +1,40 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.comparison {
+}
+
+.header {
+  &__goToProduct {
+
+  }
+
+  &__title {
+    @include font(1.6rem, 150%, 500, $blackColor);
+  }
+
+  &__subtitle {
+
+  }
+
+  &__img {
+
+  }
+
+  &__price {
+
+  }
+
+  &__rating {
+
+  }
+
+  &__review {
+
+  }
+
+  &__addAProduct {
+
+  }
+
+}

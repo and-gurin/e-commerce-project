@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import s from './SingleProduct.module.scss';
-import {ProductType} from '@/features/product/productSlice';
+import {changeRating, ProductType} from '@/features/product/productSlice';
 import firstThumb from '@/assets/product-photo/Outdoor sofa set 2.png'
 import secondThumb from '@/assets/product-photo/Outdoor sofa set_2 1.png'
 import thirdThumb from '@/assets/product-photo/Stuart sofa 1.png'
@@ -159,6 +159,7 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
     const [countValue, setCountValue] = useState(1)
     const [product, setProduct] = useState<ProductType>({
         id: 1,
+        rating: 3,
         src: syltherine,
         alt: 'syltherine',
         title: 'Syltherine',
@@ -167,9 +168,38 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
         oldPrice: 3500000,
         status: '-30%',
         quantity: 1,
+        general: {
+            'Sales Package': '1 sectional sofa',
+            'Model Number': 'TFCBLIGRBL6SRHS',
+            'Secondary Material': 'Solid Wood',
+            'Configuration': 'L-shaped',
+            'Upholstery Material': 'Fabric + Cotton',
+            'Upholstery Color': 'Bright Grey & Lion'
+        },
+        product: {
+            'Filling Material': 'Foam',
+            'Finish Type': 'Bright Grey & Lion',
+            'Adjustable Headrest': 'No',
+            'Maximum Load Capacity': '280 KG',
+            'Origin of Manufacture': 'India'
+        },
+        dimensions: {
+            'Width': '265.32 cm',
+            'Height': '76 cm',
+            'Depth': '167.76 cm',
+            'Weight': '45 KG',
+            'Seat Height': '41.52 cm',
+            'Leg Height': '5.46 cm',
+        },
+        warranty: {
+            'Warranty Summary': '1 Year Manufacturing Warranty',
+            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
+            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            'Domestic Warranty': '1 Year'
+        },
     });
     const [photo, setPhoto] = useState<string>(productPhoto[0].src)
-    const [ratingValue, setRatingValue] = useState<number | null>(4.5)
     const [sizeValue, setSizeValue] = useState('')
     const [colorValue, setColorValue] = useState('')
     const [descriptionValue, setDescriptionValue] = useState('description')
@@ -226,9 +256,9 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
                             <Rating name='half-rating'
                                     sx={{fontSize: '20px', marginRight: '18px'}}
                                     emptyIcon={<Star fontSize="inherit" sx={{color: 'white'}}/>}
-                                    value={ratingValue}
+                                    value={singleProduct?.rating}
                                     onChange={(_event, newValue) => {
-                                        setRatingValue(newValue);
+                                        dispatch(changeRating({id: singleProduct?.id, ratingValue: newValue}))
                                     }}
                                     precision={0.5}/>
                             <svg width="2" height="37" style={{marginRight: '22px'}} viewBox="0 0 2 37" fill="none"
