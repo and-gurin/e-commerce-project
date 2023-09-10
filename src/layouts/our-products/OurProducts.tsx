@@ -50,7 +50,7 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
             }
             const links = [
                 {id: 1, src: <ShareIcon/>, href: '#', onClick: () => {}},
-                {id: 3, src: <CompareIcon/>, href: `/comparison/${product.id}`, onClick: () => {dispatch(addToComparison({product: product}))}},
+                {id: 3, src: <CompareIcon/>, href: `/comparison`, onClick: () => {dispatch(addToComparison(product))}},
                 {id: 2, src: <LikeIcon/>, href: '#', onClick: () => {}},
             ]
             return (

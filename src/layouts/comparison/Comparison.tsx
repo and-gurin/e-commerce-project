@@ -17,7 +17,7 @@ const Comparison = () => {
         <section className={s.comparison}>
             <header className={s.header}>
                 <div className={s.header__goToProduct}>
-                    <Link to={'/shop'} className={s.header__title}>
+                    <Link to={'/shop'} className={s.header__title_goToProduct}>
                         Go to Product page for more Products
                     </Link>
                     <Link to={'/shop'} className={s.header__subtitle}>
@@ -26,21 +26,25 @@ const Comparison = () => {
                 </div>
                 {productInComparison.map(product => {
                     return (
-                        <div className={s.header__products}>
-                            <Link to={'/products/' + product.id} key={product.id}>
-                                <img src={product.src} className={s.header__img} width='280px' height='177px' alt={product.alt}/>
+                        <div className={s.header__products} key={product.id}>
+                            <Link to={'/products/' + product.id} >
+                                <div className={s.header__figure}>
+                                    <img src={product.src} className={s.header__img} width='239px' height='177px' alt={product.alt}/>
+                                </div>
+                            </Link>
                                 <p className={s.header__title_products}>{product.title}</p>
                                 <p className={s.header__price}>{`Rs.${product.price.toLocaleString('en-US')}`}</p>
                                 <div className={s.header__rating}>
+                                    <span style={{marginRight: '4px'}}>{product.rating}</span>
                                     <Rating name='half-rating'
-                                            sx={{fontSize: '20px', marginRight: '18px'}}
+                                            sx={{fontSize: '20px', marginRight: '6px'}}
                                             emptyIcon={<Star fontSize="inherit" sx={{color: 'white'}}/>}
                                             value={product.rating}
                                             onChange={(_event, newValue) => {
                                                 dispatch(changeRating({id: product.id, ratingValue: newValue}))
                                             }}
                                             precision={0.5}/>
-                                    <svg width="2" height="37" style={{marginRight: '22px'}} viewBox="0 0 2 37" fill="none"
+                                    <svg width="2" height="37" style={{marginRight: '9px'}} viewBox="0 0 2 37" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <line x1="1" x2="1" y2="37" stroke="#9F9F9F" strokeWidth="1"/>
                                     </svg>
@@ -48,7 +52,6 @@ const Comparison = () => {
                                         5 Customer Review
                                     </Link>
                                 </div>
-                            </Link>
                         </div>
                     )
                 })}

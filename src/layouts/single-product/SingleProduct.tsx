@@ -24,6 +24,7 @@ import {useAppDispatch, useAppSelector} from "@/hooks/useAppDispatch";
 import {addToCart} from "@/features/cart/cartSlice";
 import React from 'react';
 import Radio from '@/components/radio/Radio';
+import {addToComparison} from "@/features/conparison/comparisonSlice";
 
 const productThumbnail = [
     {
@@ -317,7 +318,8 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
                                         height='64px'
                                         borderRadius='15px'
                                         bg={'transparent'}
-                                        link={'#'}
+                                        link={'/comparison'}
+                                        onClick={()=>dispatch(addToComparison(product))}
                             />
                         </div>
                         <aside className={s.technicalInfo}>

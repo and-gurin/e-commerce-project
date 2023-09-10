@@ -2,39 +2,64 @@
 @import 'src/styles/mixins';
 
 .comparison {
+  padding: 34px 100px 112px;
 }
 
 .header {
+  display: grid;
+  column-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
   &__goToProduct {
 
   }
 
-  &__title {
-    @include font(1.6rem, 150%, 500, $blackColor);
+  &__title_goToProduct {
+    @include font(2.8rem, 127%, 500, $blackColor);
+    margin-bottom: 21px;
+    display: block;
   }
 
   &__subtitle {
+    @include font(2.0rem, 150%, 500, $grayThirdColor);
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+    max-width: 115px;
+  }
 
+  &__products {
+    justify-self: center;
+  }
+
+  &__figure {
   }
 
   &__img {
+    border-radius: 10px;
+  }
 
+  &__title_products {
+    @include font(2.4rem, 127%, 500, $blackColor);
   }
 
   &__price {
-
+    @include font(1.8rem, 150%, 500, $blackColor);
   }
 
   &__rating {
-
+    display: flex;
+    align-items: center;
+    @include font(1.8rem, 150%, 500, $blackColor);
   }
 
   &__review {
-
+    @include font(1.3rem, 150%, 400, $grayFifthColor);
   }
 
-  &__addAProduct {
-
+  &__title_addAProduct {
+    @include font(2.4rem, 127%, 600, $blackColor);
+    margin-bottom: 14px;
+    display: block;
   }
 
 }
