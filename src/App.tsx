@@ -38,7 +38,7 @@ function App() {
                 }/>
                 <Route path='/shop' element={<ShopPage setIsOpen={setIsOpen}/>}/>
                 <Route path='/cart' element={<CartPage/>}/>
-                <Route path='/comparison' element={<ComparisonPage/>}/>
+                <Route path='/comparison' element={<ComparisonPage setIsOpen={setIsOpen}/>}/>
             </Routes>
 
             <Footer/>

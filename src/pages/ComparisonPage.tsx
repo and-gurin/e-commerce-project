@@ -3,12 +3,12 @@ import Advantages from "@/layouts/advantages/advantages";
 import React from "react";
 import Comparison from "@/layouts/comparison/Comparison";
 
-const ComparisonPage = () => {
+const ComparisonPage = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
 
     return (
         <>
             <Breadcrumbs pageTitle={true}/>
-            <Comparison/>
+            <Comparison setIsOpen={setIsOpen}/>
             <Advantages/>
         </>
     );

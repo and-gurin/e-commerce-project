@@ -19,13 +19,13 @@ export type ProductType = {
     oldPrice: number | ''
     status: string
     quantity: number
-    general: GeneralObjectType
-    product: ProductObjectType
-    dimensions: DimensionsObjectType
-    warranty: WarrantyObjectType
+    'general': GeneralObjectType
+    'product': ProductObjectType
+    'dimensions': DimensionsObjectType
+    'warranty': WarrantyObjectType
 }
 
-type GeneralObjectType = {
+export type GeneralObjectType = {
     'Sales Package': string
     'Model Number': string
     'Secondary Material': string
@@ -114,7 +114,7 @@ const initialState: ProductType[] = [
         status: '',
         quantity: 1,
         general: {
-            'Sales Package': '1 Three Seater, 2 Single Seater',
+            'Sales Package': '1 Three Seater',
             'Model Number': 'ZCBBLIGRBL6SRHSSVB',
             'Secondary Material': 'Solid Wood',
             'Configuration': 'L-shaped',

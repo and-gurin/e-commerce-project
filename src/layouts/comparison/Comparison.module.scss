@@ -2,13 +2,14 @@
 @import 'src/styles/mixins';
 
 .comparison {
-  padding: 34px 100px 112px;
+  padding: 34px 0 112px 0;
 }
 
 .header {
   display: grid;
   column-gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  padding: 0 100px;
 
   &__goToProduct {
 
@@ -29,6 +30,7 @@
 
   &__products {
     justify-self: center;
+    padding: 0 25px 60px 39px;
   }
 
   &__figure {
@@ -61,5 +63,51 @@
     margin-bottom: 14px;
     display: block;
   }
+}
 
+.content {
+  padding: 0 50px;
+}
+
+.table {
+  @include font(2.0rem, 127%, 400, $blackColor);
+  border-collapse: collapse;
+  border-top: 1px solid $graySixthColor;
+  table-layout: fixed;
+  width: 1340px;
+
+  & td {
+    overflow: hidden;
+  }
+
+  &__body {
+    padding: 42px 0 0 42px;
+  }
+
+  &__title {
+    @include font(2.8rem, 127%, 500, $blackColor);
+    padding: 50px 42px 28px;
+    border-right: 1px solid $graySixthColor;
+    &_last {
+      border-right: 1px solid transparent;
+    }
+  }
+
+  &__heading {
+    width: 335px;
+    padding: 17px 42px;
+    border-right: 1px solid $graySixthColor;
+    vertical-align: top;
+  }
+
+  &__content {
+    width: 304px;
+    padding: 17px 42px 17px 52px;
+    border-left: 1px solid $graySixthColor;
+  }
+
+  &__button {
+    text-align: center;
+    border-right: 1px solid $graySixthColor;
+  }
 }
