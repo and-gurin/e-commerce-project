@@ -9,11 +9,8 @@ export const comparisonSlice = createSlice({
         initialState,
         reducers: {
             addToComparison: (state, action: PayloadAction<ProductType>) => {
-                if (state.length >= 2) {
-
-                } else {
-                    !state.map(product => product.id).includes(action.payload.id) ?
-                        state.push({ ...action.payload}) : null
+                if (state.length <= 2 && !state.some(product => product.id === action.payload.id)) {
+                    state.push({ ...action.payload})
                 }
             },
         }

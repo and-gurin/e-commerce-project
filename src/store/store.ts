@@ -1,5 +1,5 @@
 import {AnyAction, combineReducers, configureStore, ThunkDispatch} from '@reduxjs/toolkit';
-import { productReducer } from '@/features/product/productSlice';
+import {productReducer} from '@/features/product/productSlice';
 import {cartReducer} from "@/features/cart/cartSlice";
 import {comparisonReducer} from "@/features/conparison/comparisonSlice";
 

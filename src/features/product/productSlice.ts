@@ -19,44 +19,44 @@ export type ProductType = {
     oldPrice: number | ''
     status: string
     quantity: number
-    'general': GeneralObjectType
-    'product': ProductObjectType
-    'dimensions': DimensionsObjectType
-    'warranty': WarrantyObjectType
+    general: GeneralObjectType
+    product: ProductObjectType
+    dimensions: DimensionsObjectType
+    warranty: WarrantyObjectType
 }
 
 export type GeneralObjectType = {
-    'Sales Package': string
-    'Model Number': string
-    'Secondary Material': string
-    'Configuration': string
-    'Upholstery Material': string
-    'Upholstery Color': string
+    salesPackage: string
+    modelNumber: string
+    secondaryMaterial: string
+    configuration: string
+    upholsteryMaterial: string
+    upholsteryColor: string
 }
 
 type ProductObjectType = {
-    'Filling Material': string
-    'Finish Type': string
-    'Adjustable Headrest': string
-    'Maximum Load Capacity': string
-    'Origin of Manufacture': string
+    fillingMaterial: string
+    finishType: string
+    adjustableHeadrest: string
+    maximumLoadCapacity: string
+    originOfManufacture: string
 }
 
 type DimensionsObjectType = {
-    'Width': string
-    'Height': string
-    'Depth': string
-    'Weight': string
-    'Seat Height': string
-    'Leg Height': string
+    width: string
+    height: string
+    depth: string
+    weight: string
+    seatHeight: string
+    legHeight: string
 }
 
 type WarrantyObjectType = {
-    'Warranty Summary': string
-    'Warranty Service Type': string
-    'Covered in Warranty': string
-    'Not Covered in Warranty': string
-    'Domestic Warranty': string
+    warrantySummary: string
+    warrantyServiceType: string
+    coveredInWarranty: string
+    notCoveredInWarranty: string
+    domesticWarranty: string
 }
 
 const initialState: ProductType[] = [
@@ -72,34 +72,34 @@ const initialState: ProductType[] = [
         status: '-30%',
         quantity: 1,
         general: {
-            'Sales Package': '1 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '1 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '1 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '1 Year'
+            warrantySummary: '1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '1 Year'
         },
     },
     {
@@ -114,34 +114,34 @@ const initialState: ProductType[] = [
         status: '',
         quantity: 1,
         general: {
-            'Sales Package': '1 Three Seater',
-            'Model Number': 'ZCBBLIGRBL6SRHSSVB',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '1 Three Seater',
+            modelNumber: 'ZCBBLIGRBL6SRHSSVB',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '1.2 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '1.2 Year'
+            warrantySummary: '1.2 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '1.2 Year'
         },
     },
     {
@@ -156,34 +156,34 @@ const initialState: ProductType[] = [
         status: '-50%',
         quantity: 1,
         general: {
-            'Sales Package': '5 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '5 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&Matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&Matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '2.1 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '2.1 Year'
+            warrantySummary: '2.1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '2.1 Year'
         },
     },
     {
@@ -198,34 +198,34 @@ const initialState: ProductType[] = [
         status: '',
         quantity: 1,
         general: {
-            'Sales Package': '3 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '3 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&Matte&Foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&Matte&Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '3.1 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '3.1 Year'
+            warrantySummary: '3.1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '3.1 Year'
         },
     },
     {
@@ -240,34 +240,34 @@ const initialState: ProductType[] = [
         status: '',
         quantity: 1,
         general: {
-            'Sales Package': '5 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '5 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '5 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '5 Year'
+            warrantySummary: '5 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '5 Year'
         },
     },
     {
@@ -282,34 +282,34 @@ const initialState: ProductType[] = [
         status: 'New',
         quantity: 1,
         general: {
-            'Sales Package': '6 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '6 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '6 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '6 Year'
+            warrantySummary: '6 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '6 Year'
         },
     },
     {
@@ -324,34 +324,34 @@ const initialState: ProductType[] = [
         status: '-50%',
         quantity: 1,
         general: {
-            'Sales Package': '7 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '7 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '7 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '7 Year'
+            warrantySummary: '7 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '7 Year'
         },
     },
     {
@@ -366,34 +366,34 @@ const initialState: ProductType[] = [
         status: 'New',
         quantity: 1,
         general: {
-            'Sales Package': '8 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '8 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&matte&foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&matte&foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '8 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '8 Year'
+            warrantySummary: '8 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '8 Year'
         },
     },
     {
@@ -408,40 +408,40 @@ const initialState: ProductType[] = [
         status: '-30%',
         quantity: 1,
         general: {
-            'Sales Package': '1 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '1 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '1 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '1 Year'
+            warrantySummary: '1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '1 Year'
         },
     },
     {
         id: 10,
-        rating: 3,
         src: liviosa,
+        rating: 3,
         alt: 'liviosa',
         title: 'Liviosa',
         description: 'Stylish cafe chair',
@@ -450,40 +450,40 @@ const initialState: ProductType[] = [
         status: '',
         quantity: 1,
         general: {
-            'Sales Package': '1 Three Seater, 2 Single Seater',
-            'Model Number': 'ZCBBLIGRBL6SRHSSVB',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '1 Three Seater',
+            modelNumber: 'ZCBBLIGRBL6SRHSSVB',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '1.2 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '1.2 Year'
+            warrantySummary: '1.2 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '1.2 Year'
         },
     },
     {
         id: 11,
-        rating: 3,
         src: lolito,
+        rating: 3,
         alt: 'lolito',
         title: 'Lolito',
         description: 'Luxury big sofa',
@@ -492,34 +492,34 @@ const initialState: ProductType[] = [
         status: '-50%',
         quantity: 1,
         general: {
-            'Sales Package': '5 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '5 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&Matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&Matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '2.1 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '2.1 Year'
+            warrantySummary: '2.1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '2.1 Year'
         },
     },
     {
@@ -534,34 +534,34 @@ const initialState: ProductType[] = [
         status: '',
         quantity: 1,
         general: {
-            'Sales Package': '3 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '3 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&Matte&Foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&Matte&Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '3.1 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '3.1 Year'
+            warrantySummary: '3.1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '3.1 Year'
         },
     },
     {
@@ -576,34 +576,34 @@ const initialState: ProductType[] = [
         status: '',
         quantity: 1,
         general: {
-            'Sales Package': '5 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '5 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '5 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '5 Year'
+            warrantySummary: '5 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '5 Year'
         },
     },
     {
@@ -618,34 +618,34 @@ const initialState: ProductType[] = [
         status: 'New',
         quantity: 1,
         general: {
-            'Sales Package': '6 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '6 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '6 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '6 Year'
+            warrantySummary: '6 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '6 Year'
         },
     },
     {
@@ -660,34 +660,34 @@ const initialState: ProductType[] = [
         status: '-50%',
         quantity: 1,
         general: {
-            'Sales Package': '7 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '7 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '7 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '7 Year'
+            warrantySummary: '7 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '7 Year'
         },
     },
     {
@@ -702,34 +702,34 @@ const initialState: ProductType[] = [
         status: 'New',
         quantity: 1,
         general: {
-            'Sales Package': '8 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '8 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&matte&foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&matte&foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '8 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '8 Year'
+            warrantySummary: '8 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '8 Year'
         },
     },
     {
@@ -744,40 +744,40 @@ const initialState: ProductType[] = [
         status: '-30%',
         quantity: 1,
         general: {
-            'Sales Package': '1 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '1 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '1 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '1 Year'
+            warrantySummary: '1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '1 Year'
         },
     },
     {
         id: 18,
-        rating: 3,
         src: liviosa,
+        rating: 3,
         alt: 'liviosa',
         title: 'Liviosa',
         description: 'Stylish cafe chair',
@@ -786,40 +786,40 @@ const initialState: ProductType[] = [
         status: '',
         quantity: 1,
         general: {
-            'Sales Package': '1 Three Seater, 2 Single Seater',
-            'Model Number': 'ZCBBLIGRBL6SRHSSVB',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '1 Three Seater',
+            modelNumber: 'ZCBBLIGRBL6SRHSSVB',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '1.2 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '1.2 Year'
+            warrantySummary: '1.2 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '1.2 Year'
         },
     },
     {
         id: 19,
-        rating: 3,
         src: lolito,
+        rating: 3,
         alt: 'lolito',
         title: 'Lolito',
         description: 'Luxury big sofa',
@@ -828,34 +828,34 @@ const initialState: ProductType[] = [
         status: '-50%',
         quantity: 1,
         general: {
-            'Sales Package': '5 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '5 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&Matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&Matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '2.1 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '2.1 Year'
+            warrantySummary: '2.1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '2.1 Year'
         },
     },
     {
@@ -870,34 +870,34 @@ const initialState: ProductType[] = [
         status: '',
         quantity: 1,
         general: {
-            'Sales Package': '3 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '3 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&Matte&Foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&Matte&Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '3.1 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '3.1 Year'
+            warrantySummary: '3.1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '3.1 Year'
         },
     },
     {
@@ -912,34 +912,34 @@ const initialState: ProductType[] = [
         status: '',
         quantity: 1,
         general: {
-            'Sales Package': '5 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '5 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '5 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '5 Year'
+            warrantySummary: '5 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '5 Year'
         },
     },
     {
@@ -954,34 +954,34 @@ const initialState: ProductType[] = [
         status: 'New',
         quantity: 1,
         general: {
-            'Sales Package': '6 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '6 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '6 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '6 Year'
+            warrantySummary: '6 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '6 Year'
         },
     },
     {
@@ -996,34 +996,34 @@ const initialState: ProductType[] = [
         status: '-50%',
         quantity: 1,
         general: {
-            'Sales Package': '7 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '7 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&matte',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&matte',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '7 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '7 Year'
+            warrantySummary: '7 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '7 Year'
         },
     },
     {
@@ -1038,34 +1038,34 @@ const initialState: ProductType[] = [
         status: 'New',
         quantity: 1,
         general: {
-            'Sales Package': '8 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '8 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam&matte&foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam&matte&foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '8 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '8 Year'
+            warrantySummary: '8 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '8 Year'
         },
     },
 ]

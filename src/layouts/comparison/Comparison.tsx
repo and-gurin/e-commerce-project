@@ -9,34 +9,29 @@ import CartButton from '@/components/cartButton/CartButton';
 import arrow from '@/assets/svg/arrow-down.svg'
 import {addToCart} from "@/features/cart/cartSlice";
 
-const Comparison = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
+const Comparison = ({setIsOpen}: { setIsOpen: (isOpen: boolean) => void }) => {
 
     const productInComparison = useAppSelector(state => state.comparison);
     const dispatch = useAppDispatch();
-    const productsFeatures = (objectName: string) => {
+
+    const productsFeatures = (categoryName: string) => {
         let result: any[] = [];
-        if (productInComparison.length > 0) {
-            for (let i = 0; i < Object.keys(productInComparison[0][objectName]).length; i++) {
-                result.push([])
-                result[i].push(Object.keys(productInComparison[0][objectName])[i]);
-                result[i].push(Object.values(productInComparison[0][objectName])[i]);
-                if (productInComparison.length > 1) {
-                    result[i].push(Object.values(productInComparison[1][objectName])[i])
-                }
-            }
-            return result
+        const productKeys = productInComparison.length > 0 && Object.keys(productInComparison[0][categoryName])
+            .map(key => key.replace(/([a-z])([A-Z])/g, '$1 $2').split(" ")
+                .map(word=> word.charAt(0).toUpperCase() + word.slice(1)))
+        const firstProductValues = productInComparison.length > 0 && Object.values(productInComparison[0][categoryName])
+        const secondProductValues = productInComparison.length > 1 && Object.values(productInComparison[1][categoryName])
+        for (let i = 0; i < productKeys?.length; i++) {
+            result.push([])
+            result[i].push(productKeys[i]);
+            result[i].push(firstProductValues[i]);
+            result[i].push(secondProductValues[i])
         }
+        return result
     };
-    const generalFeatures = productsFeatures('general');
-    const productFeatures = productsFeatures('product');
-    const dimensionsFeatures = productsFeatures('dimensions');
-    const warrantyFeatures = productsFeatures('warranty');
-    const onClickAddToCartFirst = () => {
-        dispatch(addToCart({product: productInComparison[0], quantity: 1}))
-        setIsOpen(true)
-    }
-    const onClickAddToCartSecond = () => {
-        dispatch(addToCart({product: productInComparison[0], quantity: 1}))
+    console.log('SalesPackage'.replace(/([a-z])([A-Z])/g, '$1 $2'))
+    const onClickAddToCart = (productNumber: number) => {
+        dispatch(addToCart({product: productInComparison[productNumber], quantity: 1}))
         setIsOpen(true)
     }
 
@@ -104,68 +99,27 @@ const Comparison = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
             <main className={s.content}>
                 <table className={s.table}>
                     <tbody className={s.table__body}>
-                    <tr className={s.table__titleString}>
-                        <td className={s.table__title}>General</td>
-                        <td className={s.table__title}>&nbsp;</td>
-                        <td className={s.table__title}>&nbsp;</td>
-                        <td className={s.table__title_last}>&nbsp;</td>
-                    </tr>
-                    {generalFeatures?.map(feature => {
+                    {['general', 'product', 'dimensions', 'warranty'].map(name => {
                         return (
-                            <tr key={feature[0]} className={s.table__section}>
-                                <td className={s.table__heading}>{feature[0]}</td>
-                                <td className={s.table__content}>{feature[1]}</td>
-                                <td className={s.table__content}>{feature[2]}</td>
-                                <td className={s.table__content}>{''}</td>
-                            </tr>
-                        )
-                    })}
-                    <tr className={s.table__titleString}>
-                        <td className={s.table__title}>Product</td>
-                        <td className={s.table__title}>&nbsp;</td>
-                        <td className={s.table__title}>&nbsp;</td>
-                        <td className={s.table__title_last}>&nbsp;</td>
-                    </tr>
-                    {productFeatures?.map(feature => {
-                        return (
-                            <tr key={feature[0]} className={s.table__section}>
-                                <td className={s.table__heading}>{feature[0]}</td>
-                                <td className={s.table__content}>{feature[1]}</td>
-                                <td className={s.table__content}>{feature[2]}</td>
-                                <td className={s.table__content}>{''}</td>
-                            </tr>
-                        )
-                    })}
-                    <tr className={s.table__titleString}>
-                        <td className={s.table__title}>Dimensions</td>
-                        <td className={s.table__title}>&nbsp;</td>
-                        <td className={s.table__title}>&nbsp;</td>
-                        <td className={s.table__title_last}>&nbsp;</td>
-                    </tr>
-                    {dimensionsFeatures?.map(feature => {
-                        return (
-                            <tr key={feature[0]} className={s.table__section}>
-                                <td className={s.table__heading}>{feature[0]}</td>
-                                <td className={s.table__content}>{feature[1]}</td>
-                                <td className={s.table__content}>{feature[2]}</td>
-                                <td className={s.table__content}>{''}</td>
-                            </tr>
-                        )
-                    })}
-                    <tr className={s.table__titleString}>
-                        <td className={s.table__title}>Warranty</td>
-                        <td className={s.table__title}>&nbsp;</td>
-                        <td className={s.table__title}>&nbsp;</td>
-                        <td className={s.table__title_last}>&nbsp;</td>
-                    </tr>
-                    {warrantyFeatures?.map(feature => {
-                        return (
-                            <tr key={feature[0]} className={s.table__section}>
-                                <td className={s.table__heading}>{feature[0]}</td>
-                                <td className={s.table__content}>{feature[1]}</td>
-                                <td className={s.table__content}>{feature[2]}</td>
-                                <td className={s.table__content}>&nbsp;</td>
-                            </tr>
+                            <>
+                                <tr className={s.table__titleString}>
+                                    <td className={s.table__title}>{name.split(" ")
+                                        .map(word=> word.charAt(0).toUpperCase() + word.slice(1))}</td>
+                                    <td className={s.table__title}>&nbsp;</td>
+                                    <td className={s.table__title}>&nbsp;</td>
+                                    <td className={s.table__title_last}>&nbsp;</td>
+                                </tr>
+                                {productsFeatures(name)?.map(feature => {
+                                    return (
+                                        <tr key={feature[0]} className={s.table__section}>
+                                            <td className={s.table__heading}>{feature[0]}</td>
+                                            <td className={s.table__content}>{feature[1]}</td>
+                                            <td className={s.table__content}>{feature[2]}</td>
+                                            <td className={s.table__content}>{''}</td>
+                                        </tr>
+                                    )
+                                })}
+                            </>
                         )
                     })}
                     <tr>
@@ -181,7 +135,7 @@ const Comparison = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
                                         fontWeight={'400'}
                                         color={'#FFFFFF'}
                                         border={'none'}
-                                        onClick={onClickAddToCartFirst}
+                                        onClick={() => onClickAddToCart(0)}
                             />
                         </td>
                         <td className={s.table__button}>
@@ -195,7 +149,7 @@ const Comparison = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
                                         fontWeight={'400'}
                                         color={'#FFFFFF'}
                                         border={'none'}
-                                        onClick={onClickAddToCartSecond}
+                                        onClick={() => onClickAddToCart(1)}
                             />
                         </td>
                         <td className={s.table__title_last}>&nbsp;</td>

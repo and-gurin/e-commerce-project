@@ -170,34 +170,34 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
         status: '-30%',
         quantity: 1,
         general: {
-            'Sales Package': '1 sectional sofa',
-            'Model Number': 'TFCBLIGRBL6SRHS',
-            'Secondary Material': 'Solid Wood',
-            'Configuration': 'L-shaped',
-            'Upholstery Material': 'Fabric + Cotton',
-            'Upholstery Color': 'Bright Grey & Lion'
+            salesPackage: '1 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
         },
         product: {
-            'Filling Material': 'Foam',
-            'Finish Type': 'Bright Grey & Lion',
-            'Adjustable Headrest': 'No',
-            'Maximum Load Capacity': '280 KG',
-            'Origin of Manufacture': 'India'
+            fillingMaterial: 'Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
         },
         dimensions: {
-            'Width': '265.32 cm',
-            'Height': '76 cm',
-            'Depth': '167.76 cm',
-            'Weight': '45 KG',
-            'Seat Height': '41.52 cm',
-            'Leg Height': '5.46 cm',
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
         },
         warranty: {
-            'Warranty Summary': '1 Year Manufacturing Warranty',
-            'Warranty Service Type': 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
-            'Covered in Warranty': 'Warranty Against Manufacturing Defect',
-            'Not Covered in Warranty': 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
-            'Domestic Warranty': '1 Year'
+            warrantySummary: '1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '1 Year'
         },
     });
     const [photo, setPhoto] = useState<string>(productPhoto[0].src)
