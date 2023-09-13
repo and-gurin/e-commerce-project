@@ -16,9 +16,9 @@ const Comparison = ({setIsOpen}: { setIsOpen: (isOpen: boolean) => void }) => {
 
     const productsFeatures = (categoryName: string) => {
         let result: any[] = [];
-        const productKeys = productInComparison.length > 0 && Object.keys(productInComparison[0][categoryName])
-            .map(key => key.replace(/([a-z])([A-Z])/g, '$1 $2').split(" ")
-                .map(word=> word.charAt(0).toUpperCase() + word.slice(1)))
+        const productKeys = productInComparison.length > 0
+            && Object.keys(productInComparison[0][categoryName]).map(key => key.replace(/([a-z])([A-Z])/g, '$1 $2').split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '))
         const firstProductValues = productInComparison.length > 0 && Object.values(productInComparison[0][categoryName])
         const secondProductValues = productInComparison.length > 1 && Object.values(productInComparison[1][categoryName])
         for (let i = 0; i < productKeys?.length; i++) {
@@ -29,7 +29,7 @@ const Comparison = ({setIsOpen}: { setIsOpen: (isOpen: boolean) => void }) => {
         }
         return result
     };
-    console.log('SalesPackage'.replace(/([a-z])([A-Z])/g, '$1 $2'))
+
     const onClickAddToCart = (productNumber: number) => {
         dispatch(addToCart({product: productInComparison[productNumber], quantity: 1}))
         setIsOpen(true)
