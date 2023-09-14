@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import s from './InputPlusMinus.module.scss'
-import {ChangeEvent} from "react/ts5.0";
 
 const InputPlusMinus = ({onClickPlus, onClickMinus, value, onChange}:
                             {

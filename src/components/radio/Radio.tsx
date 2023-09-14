@@ -1,5 +1,5 @@
 import s from './Radio.module.scss'
-import React, { ChangeEvent } from 'react';
+import React, {ChangeEvent} from 'react';
 
 type OptionsPropsType = {
     value: string,
@@ -7,7 +7,12 @@ type OptionsPropsType = {
     title: string
 }
 
-const Radio = ({value, onChange, options}: {value: string, onChange: (e: ChangeEvent<HTMLInputElement>) => void, options: OptionsPropsType[]}) => {
+const Radio = ({value, onChange, options}:
+                   {
+                       value: string,
+                       onChange: (e: ChangeEvent<HTMLInputElement>) => void,
+                       options: OptionsPropsType[]
+                   }) => {
     return <>
         { options.map((option, index) =>
             <label key={index} htmlFor={option.id} className={s.radioLabel}>
