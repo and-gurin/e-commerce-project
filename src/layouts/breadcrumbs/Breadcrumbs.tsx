@@ -29,7 +29,7 @@ const Breadcrumbs = ({productTitle, pageTitle}: {productTitle?: string, pageTitl
                     </li>
                 </Link>
                 <img src={rightArrow} className={s.breadcrumb__arrow} alt='right-arrow'/>
-                <Link to={'/shop'}>
+                <Link to={location.pathname}>
                     <li className={s.breadcrumb__item}>
                         {resultPathToUpperCase}
                     </li>
