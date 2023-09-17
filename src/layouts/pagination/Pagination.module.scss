@@ -2,10 +2,39 @@
 @import 'src/styles/mixins';
 
 .pagination {
-  margin: 15px auto;
   display: inline-flex;
   list-style: none;
   outline: none;
-  padding: 20px;
-  gap: 20px;
+  gap: 38px;
+  @include font(2.0rem, 150%, 300, $blackColor);
+
+  &Links {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: $bgBaseColor;
+    display: inline-block;
+    line-height: 61px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  &Next {
+    padding: 0 28px;
+    background-color: $bgBaseColor;
+    display: inline-block;
+    line-height: 61px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &Active {
+    background-color: $primaryColor;
+    color: $whiteColor;
+  }
+
+  &Disable {
+    background-color: $bgLightestColor;
+    color: $graySixthColor;
+  }
 }
