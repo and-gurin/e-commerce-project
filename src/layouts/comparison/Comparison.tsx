@@ -7,20 +7,23 @@ import {Star} from '@mui/icons-material';
 import {changeRating} from '@/features/product/productSlice';
 import CartButton from '@/components/cartButton/CartButton';
 import arrow from '@/assets/svg/arrow-down.svg'
-import {addToCart} from "@/features/cart/cartSlice";
+import {addToCart} from '@/features/cart/cartSlice';
+
+type propertyNamesType = 'general' | 'product' | 'dimensions'| 'warranty';
 
 const Comparison = ({setIsOpen}: { setIsOpen: (isOpen: boolean) => void }) => {
 
     const productInComparison = useAppSelector(state => state.comparison);
     const dispatch = useAppDispatch();
 
-    const productsFeatures = (categoryName: string) => {
+
+    const productsFeatures = (categoryName: propertyNamesType) => {
         let result: any[] = [];
-        const productKeys = productInComparison.length > 0
-            && Object.keys(productInComparison[0][categoryName]).map(key => key.replace(/([a-z])([A-Z])/g, '$1 $2').split(' ')
-                .map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '))
-        const firstProductValues = productInComparison.length > 0 && Object.values(productInComparison[0][categoryName])
-        const secondProductValues = productInComparison.length > 1 && Object.values(productInComparison[1][categoryName])
+        const productKeys = productInComparison.length > 0 ?
+             Object.keys(productInComparison[0][categoryName]).map(key => key.replace(/([a-z])([A-Z])/g, '$1 $2').split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')) : ''
+        const firstProductValues = productInComparison.length > 0 ? Object.values(productInComparison[0][categoryName]) : '';
+        const secondProductValues = productInComparison.length > 1 ? Object.values(productInComparison[1][categoryName]) : '';
         for (let i = 0; i < productKeys?.length; i++) {
             result.push([])
             result[i].push(productKeys[i]);
@@ -29,6 +32,8 @@ const Comparison = ({setIsOpen}: { setIsOpen: (isOpen: boolean) => void }) => {
         }
         return result
     };
+
+    const propertyNames: Array<propertyNamesType> = ['general', 'product', 'dimensions', 'warranty'];
 
     const onClickAddToCart = (productNumber: number) => {
         dispatch(addToCart({product: productInComparison[productNumber], quantity: 1}))
@@ -99,7 +104,7 @@ const Comparison = ({setIsOpen}: { setIsOpen: (isOpen: boolean) => void }) => {
             <main className={s.content}>
                 <table className={s.table}>
                     <tbody className={s.table__body}>
-                    {['general', 'product', 'dimensions', 'warranty'].map(name => {
+                    {propertyNames.map(name => {
                         return (
                             <>
                                 <tr className={s.table__titleString}>
