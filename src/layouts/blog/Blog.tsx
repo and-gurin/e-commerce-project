@@ -278,6 +278,7 @@ const Blog = ({itemsPerPage}: { itemsPerPage: number }) => {
 
     return (
         <section className={s.blog}>
+            <div className={s.blog__wrapper}>
                 <div className={s.posts__wrapper}>
                     {<BlogArticlesList articles={currentPageData}/>}
                     <div className={s.posts__pagination}>
@@ -303,8 +304,8 @@ const Blog = ({itemsPerPage}: { itemsPerPage: number }) => {
                             {resentPostsList}
                         </div>
                     </div>
-
                 </aside>
+            </div>
         </section>
     );
 };

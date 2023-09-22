@@ -5,11 +5,16 @@
   padding: 34px 0 112px 0;
 }
 
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 46px;
+}
+
 .header {
   display: grid;
   column-gap: 50px;
   grid-template-columns: repeat(4, minmax(250px, 1fr));
-  padding: 0 100px;
 
   &__title_goToProduct {
     @include font(2.8rem, 127%, 500, $blackColor);
@@ -26,7 +31,7 @@
 
   &__products {
     justify-self: center;
-    padding: 0 25px 60px 39px;
+    padding: 0 25px 60px 85px;
   }
 
   &__img {
@@ -51,15 +56,15 @@
     @include font(1.3rem, 150%, 400, $grayFifthColor);
   }
 
+  &__addAProduct {
+    margin-left: 50px;
+  }
+
   &__title_addAProduct {
     @include font(2.4rem, 127%, 600, $blackColor);
     margin-bottom: 14px;
     display: block;
   }
-}
-
-.content {
-  padding: 0 50px;
 }
 
 .table {
