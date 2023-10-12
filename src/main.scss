@@ -37,3 +37,7 @@ h3 {
 h4 {
     @include font(2.4rem, 150%, 600, $fontFirstColor);
 }
+
+h5 {
+    @include font(3.6rem, 150%, 600, $blackColor);
+}

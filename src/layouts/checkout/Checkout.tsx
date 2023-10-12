@@ -52,77 +52,78 @@ const Checkout = () => {
 
     return (
         <section className={s.checkout}>
-            <form className={s.form}>
-                <p className={s.form__title}>Billing details</p>
-                <div className={s.form__doubleInput}>
-                    <Input textLabel={'First Name'} width={'211px'}/>
-                    <Input textLabel={'Last Name'} width={'211px'}/>
-                </div>
-                <div className={s.form__input}>
-                    <Input textLabel={'Company Name (Optional)'}/>
-                </div>
-                <div className={s.form__input}>
-                    <Select textLabel={'Country / Region'} options={countryOptions}/>
-                </div>
-                <div className={s.form__input}>
-                    <Input textLabel={'Street address'}/>
-                </div>
-                <div className={s.form__input}>
-                    <Input textLabel={'Town / City'}/>
-                </div>
-                <div className={s.form__input}>
-                    <Select textLabel={'Province'} options={provinceOptions}/>
-                </div>
-                <div className={s.form__input}>
-                    <Input textLabel={'ZIP code'}/>
-                </div>
-                <div className={s.form__input}>
-                    <Input textLabel={'Phone'}/>
-                </div>
-                <div className={s.form__input + ' ' + s.form__input_email}>
-                    <Input textLabel={'Email address'}/>
-                </div>
-                <div className={s.form__input}>
-                    <Input textLabel={''} placeholderText={'Additional information'}/>
-                </div>
-            </form>
-            <aside className={s.order}>
-                <div className={s.order__cartTotal}>
-                    <div className={s.order__param + ' ' + s.order__param_title}>
-                        <div className={s.order__title}>Product</div>
-                        <div className={s.order__title}>Subtotal</div>
+            <div className={s.checkout__wrapper}>
+                <form className={s.form}>
+                    <p className={s.form__title}>Billing details</p>
+                    <div className={s.form__doubleInput}>
+                        <Input textLabel={'First Name'} width={'211px'}/>
+                        <Input textLabel={'Last Name'} width={'211px'}/>
                     </div>
-                    {productInCart.length ? productInCart.map(product => {
+                    <div className={s.form__input}>
+                        <Input textLabel={'Company Name (Optional)'}/>
+                    </div>
+                    <div className={s.form__input}>
+                        <Select textLabel={'Country / Region'} options={countryOptions}/>
+                    </div>
+                    <div className={s.form__input}>
+                        <Input textLabel={'Street address'}/>
+                    </div>
+                    <div className={s.form__input}>
+                        <Input textLabel={'Town / City'}/>
+                    </div>
+                    <div className={s.form__input}>
+                        <Select textLabel={'Province'} options={provinceOptions}/>
+                    </div>
+                    <div className={s.form__input}>
+                        <Input textLabel={'ZIP code'}/>
+                    </div>
+                    <div className={s.form__input}>
+                        <Input textLabel={'Phone'}/>
+                    </div>
+                    <div className={s.form__input + ' ' + s.form__input_email}>
+                        <Input textLabel={'Email address'}/>
+                    </div>
+                    <div className={s.form__input}>
+                        <Input textLabel={''} placeholderText={'Additional information'}/>
+                    </div>
+                </form>
+                <aside className={s.order}>
+                    <div className={s.order__cartTotal}>
+                        <div className={s.order__param + ' ' + s.order__param_title}>
+                            <div className={s.order__title}>Product</div>
+                            <div className={s.order__title}>Subtotal</div>
+                        </div>
+                        {productInCart.length ? productInCart.map(product => {
 
-                        const productPrice = +product.price;
+                            const productPrice = +product.price;
 
-                        return (
-                            <div className={s.order__param}>
-                                <div className={s.order__description}>
-                                    <span className={s.order__name}>{product.title}</span>
-                                    <span className={s.order__quantity}>
+                            return (
+                                <div className={s.order__param}>
+                                    <div className={s.order__description}>
+                                        <span className={s.order__name}>{product.title}</span>
+                                        <span className={s.order__quantity}>
                                         &nbsp;&nbsp;X&nbsp;&nbsp;{`${product.quantity}`}
                                     </span>
+                                    </div>
+                                    <div className={s.order__price}>
+                                        {`Rs.${productPrice.toLocaleString('en-US')}`}
+                                    </div>
                                 </div>
-                                <div className={s.order__price}>
-                                    {`Rs.${productPrice.toLocaleString('en-US')}`}
-                                </div>
+                            )
+                        }) : null}
+                        <div className={s.order__param}>
+                            <div className={s.order__subtotal}>Subtotal</div>
+                            <div className={s.order__price}>
+                                {`Rp ${subtotalInCart(productInCart).toLocaleString('en-US')}`}
                             </div>
-                        )
-                    }) : null}
-                    <div className={s.order__param}>
-                        <div className={s.order__subtotal}>Subtotal</div>
-                        <div className={s.order__price}>
-                            {`Rp ${subtotalInCart(productInCart).toLocaleString('en-US')}`}
+                        </div>
+                        <div className={s.order__param + ' ' + s.order_param_totalPrice}>
+                            <div className={s.order__subtotal}>Total</div>
+                            <div className={s.order__totalPrice}>
+                                {`Rp ${subtotalInCart(productInCart).toLocaleString('en-US')}`}
+                            </div>
                         </div>
                     </div>
-                    <div className={s.order__param + ' ' + s.order_param_totalPrice}>
-                        <div className={s.order__subtotal}>Total</div>
-                        <div className={s.order__totalPrice}>
-                            {`Rp ${subtotalInCart(productInCart).toLocaleString('en-US')}`}
-                        </div>
-                    </div>
-                </div>
                     {radioOptions.map(radio => {
                         return (
                             <RadioAccordion value={radioValue}
@@ -132,22 +133,22 @@ const Checkout = () => {
                                             onChange={(e) => setRadioValue(e.currentTarget.value)}/>
                         )
                     })}
-                <p className={s.order__subtitle}>
-                    Your personal data will be used to support your experience
-                    throughout this website, to manage access to your account,
-                    and for other purposes described in our <b>privacy policy.</b>
-                </p>
-                <div className={s.order__button}>
-                    <CartButton title='Order'
-                                width='318px'
-                                height='64px'
-                                borderRadius='15px'
-                                bg={'transparent'}
-                                link={'#'}
-                    />
-                </div>
-
-            </aside>
+                    <p className={s.order__subtitle}>
+                        Your personal data will be used to support your experience
+                        throughout this website, to manage access to your account,
+                        and for other purposes described in our <b>privacy policy.</b>
+                    </p>
+                    <div className={s.order__button}>
+                        <CartButton title='Order'
+                                    width='318px'
+                                    height='64px'
+                                    borderRadius='15px'
+                                    bg={'transparent'}
+                                    link={'#'}
+                        />
+                    </div>
+                </aside>
+            </div>
         </section>
     );
 };

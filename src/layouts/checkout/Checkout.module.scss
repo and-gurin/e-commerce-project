@@ -3,12 +3,19 @@
 @import 'src/styles/mixins';
 
 .checkout {
-  display: flex;
-  gap: 105px;
-  padding: 98px 0 102px 173px;
+
+  &__wrapper {
+    display: flex;
+    gap: 105px;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 98px 0 102px 0;
+  }
 }
 
 .form {
+  padding-left: 94px;
 
   &__title {
     @include font(3.6rem, 150%, 600, $blackColor);
@@ -32,7 +39,7 @@
 
 .order {
   width: 608px;
-  padding: 87px 38px;
+  padding: 87px 138px 87px 38px;
 
   &__cartTotal {
     border-bottom: solid 1px $grayFifthColor;

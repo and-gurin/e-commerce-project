@@ -14,6 +14,12 @@
   text-align: left;
 }
 
+.icon {
+  background-image: url('../../assets/svg/akar-icons_search.svg');
+  background-repeat: no-repeat;
+  background-position: right 26px center;
+}
+
 .input::placeholder {
   color: $grayFifthColor;
 }
