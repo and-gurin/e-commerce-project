@@ -7,13 +7,16 @@
   background-image: url('../../assets/home-page/scandinavian-interior-mockup-wall.png');
   padding-top: 153px;
   margin-bottom: 51px;
+  position: relative;
 }
 
 .promo {
   background: $bgLightColor;
   padding: 71px 0 0 41px;
-  max-width: 643px;
-  margin-left: 739px;
+  width: 643px;
+  position: absolute;
+  top: 153px;
+  left: 725px;
 }
 
 .superTitle {

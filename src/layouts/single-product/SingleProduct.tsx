@@ -157,7 +157,7 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
     const products = useAppSelector(state => state.product);
     const dispatch = useAppDispatch()
 
-    const [countValue, setCountValue] = useState(1)
+    const [countValue, setCountValue] = useState<number>(1)
     const [product, setProduct] = useState<ProductType>({
         id: 1,
         rating: 3,
@@ -301,9 +301,9 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
                         <div className={s.productButtons}>
                             <InputPlusMinus
                                 value={countValue}
-                                onClickPlus={() => setCountValue(countValue + 1)}
-                                onClickMinus={() => setCountValue(countValue <= 0 ? countValue : countValue - 1)}
-                                onChange={(e) => setCountValue(e.currentTarget.value)}
+                                onClickPlus={() => setCountValue(+countValue + 1)}
+                                onClickMinus={() => setCountValue(countValue <= 0 ? countValue : +countValue - 1)}
+                                onChange={(e) => setCountValue(+e.currentTarget.value)}
                             />
                             <CartButton title='Add To Cart'
                                         width='215px'

@@ -71,8 +71,7 @@ const Cart = () => {
                             height='59px'
                             borderRadius='15px'
                             bg={'transparent'}
-                            link={'#'}
-                            //onClick={onClickAddToCart}
+                            link={'/checkout'}
                 />
             </aside>
         </section>

@@ -1,0 +1,60 @@
+@import 'src/styles/placeholders';
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 98px 0 63px 0;
+
+  &__title {
+    margin-bottom: 7px;
+  }
+
+  &__subtitle {
+    @include font(1.6rem, 150%, 400, $grayFifthColor);
+    width: 664px;
+    text-align: center;
+    margin-bottom: 140px;
+  }
+
+  &__content {
+    display: flex;
+    gap: 160px;
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+  }
+}
+
+.copy {
+  display: flex;
+  gap: 30px;
+
+  &__description {
+    width: 212px;
+  }
+
+  &__title {
+    @include font(2.4rem, 150%, 500, $blackColor);
+  }
+
+  &__subtitle {
+    @include font(1.6rem, 150%, 400, $blackColor);
+  }
+}
+
+.form {
+
+  &__input {
+    margin-bottom: 36px;
+  }
+
+  &__input_textarea {
+    margin-bottom: 49px;
+  }
+}

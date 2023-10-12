@@ -1,0 +1,57 @@
+@import 'src/styles/placeholders';
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.input {
+  border: solid 1px $grayFifthColor;
+  border-radius: 10px;
+  outline: none;
+  padding: 25px 30px;
+  cursor: pointer;
+  width: 453px;
+  height: 75px;
+  @include font(1.6rem, 150%, 400, $blackColor);
+  text-align: left;
+}
+
+.icon {
+  background-image: url('../../assets/svg/akar-icons_search.svg');
+  background-repeat: no-repeat;
+  background-position: right 26px center;
+}
+
+.input::placeholder {
+  color: $grayFifthColor;
+}
+
+.input:focus {
+  border: solid 1px $graySecondColor;
+  outline: none;
+}
+
+.error {
+  border: solid 1px $colorRedAccents;
+  padding: 16px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.errorMessage {
+  color: $colorRedAccents;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 12px;
+}
+
+.textLabel {
+  margin-bottom: 22px;
+  @include font(1.6rem, 150%, 500, $blackColor);
+  display: block;
+}
+
+.caption {
+  color: var(--ink-lighter);
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 12px;
+}
