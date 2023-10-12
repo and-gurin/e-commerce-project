@@ -1,0 +1,111 @@
+@import 'src/styles/constants.scss';
+@import 'src/styles/mixins';
+
+.comparison {
+  padding: 34px 0 112px 0;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 46px;
+}
+
+.header {
+  display: grid;
+  column-gap: 50px;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+
+  &__title_goToProduct {
+    @include font(2.8rem, 127%, 500, $blackColor);
+    margin-bottom: 21px;
+    display: block;
+  }
+
+  &__subtitle {
+    @include font(2.0rem, 150%, 500, $grayThirdColor);
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+    max-width: 115px;
+  }
+
+  &__products {
+    justify-self: center;
+    padding: 0 25px 60px 85px;
+  }
+
+  &__img {
+    border-radius: 10px;
+  }
+
+  &__title_products {
+    @include font(2.4rem, 127%, 500, $blackColor);
+  }
+
+  &__price {
+    @include font(1.8rem, 150%, 500, $blackColor);
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    @include font(1.8rem, 150%, 500, $blackColor);
+  }
+
+  &__review {
+    @include font(1.3rem, 150%, 400, $grayFifthColor);
+  }
+
+  &__addAProduct {
+    margin-left: 50px;
+  }
+
+  &__title_addAProduct {
+    @include font(2.4rem, 127%, 600, $blackColor);
+    margin-bottom: 14px;
+    display: block;
+  }
+}
+
+.table {
+  @include font(2.0rem, 127%, 400, $blackColor);
+  border-collapse: collapse;
+  border-top: 1px solid $graySixthColor;
+  table-layout: fixed;
+  width: 1340px;
+
+  td {
+    overflow: hidden;
+  }
+
+  &__body {
+    padding: 42px 0 0 42px;
+  }
+
+  &__title {
+    @include font(2.8rem, 127%, 500, $blackColor);
+    padding: 50px 42px 28px;
+    border-right: 1px solid $graySixthColor;
+    &_last {
+      border-right: 1px solid transparent;
+    }
+  }
+
+  &__heading {
+    width: 335px;
+    padding: 17px 42px;
+    border-right: 1px solid $graySixthColor;
+    vertical-align: top;
+  }
+
+  &__content {
+    width: 304px;
+    padding: 17px 42px 17px 52px;
+    border-left: 1px solid $graySixthColor;
+  }
+
+  &__button {
+    text-align: center;
+    border-right: 1px solid $graySixthColor;
+  }
+}

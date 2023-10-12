@@ -3,11 +3,11 @@
 .wrapper {
   display: flex;
   align-items: center;
-  padding-left: 54px;
+  justify-content: space-between;
 }
 
 .logo {
-  padding: 27px 0 26px;
+  padding: 27px 0 26px 56px;
 }
 
 .nav {
@@ -20,6 +20,7 @@
   display: flex;
   gap: 45px;
   margin-left: 158px;
+  padding-right: 100px;
 }
 
 .svg {

@@ -1,0 +1,97 @@
+@import 'src/styles/placeholders';
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.checkout {
+
+  &__wrapper {
+    display: flex;
+    gap: 105px;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 98px 0 102px 0;
+  }
+}
+
+.form {
+  padding-left: 94px;
+
+  &__title {
+    @include font(3.6rem, 150%, 600, $blackColor);
+    margin-bottom: 36px;
+  }
+
+  &__doubleInput {
+    display: flex;
+    gap: 31px;
+    margin-bottom: 36px;
+  }
+
+  &__input {
+    margin-bottom: 36px;
+  }
+
+  &__input_email {
+    margin-bottom: 66px;
+  }
+}
+
+.order {
+  width: 608px;
+  padding: 87px 138px 87px 38px;
+
+  &__cartTotal {
+    border-bottom: solid 1px $grayFifthColor;
+    margin-bottom: 23px;
+    padding-bottom: 33px;
+  }
+
+  &__title {
+    @include font(2.4rem, 150%, 600, $blackColor);
+  }
+
+  &__param {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+
+  &__param_title {
+    margin-bottom: 14px;
+  }
+
+  &_param_totalPrice {
+    margin-bottom: 0;
+  }
+
+  &__name {
+    @include font(1.6rem, 150%, 400, $grayFifthColor);
+  }
+
+  &__quantity {
+    @include font(1.2rem, 150%, 500, $blackColor);
+  }
+
+  &__price {
+    @include font(1.6rem, 150%, 300, $blackColor);
+  }
+
+  &__subtotal {
+    @include font(1.6rem, 150%, 400, $primaryColor);
+  }
+
+  &__totalPrice {
+    @include font(2.4rem, 150%, 700, $primaryColor);
+  }
+
+  &__subtitle {
+    @include font(1.6rem, 150%, 300, $grayFifthColor);
+    margin-bottom: 39px;
+  }
+
+  &__button {
+    text-align: center;
+  }
+}

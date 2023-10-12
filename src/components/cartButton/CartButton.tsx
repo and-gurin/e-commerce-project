@@ -2,7 +2,7 @@ import React from 'react';
 import s from './CartButton.module.scss'
 import {Link} from "react-router-dom";
 
-const CartButton = ({title, onClick, borderRadius, width, height, bg, fontSize, link}:
+const CartButton = ({title, onClick, borderRadius, width, height, bg, fontSize, link, icon, color, fontWeight, border}:
                         {
                             title:string,
                             onClick?: ()=>void,
@@ -12,10 +12,14 @@ const CartButton = ({title, onClick, borderRadius, width, height, bg, fontSize, 
                             bg: string,
                             fontSize?: string
                             link: string
+                            icon?: string
+                            color?: string
+                            fontWeight?: string
+                            border?: string
                         }) => {
     return (
         <Link to={link}>
-            <button className={s.button}
+            <button className={icon ? s.button + ' ' + s.button_icon : s.button}
                     onClick={onClick}
                     style={
                         {
@@ -23,9 +27,13 @@ const CartButton = ({title, onClick, borderRadius, width, height, bg, fontSize, 
                             width: width,
                             height: height,
                             background: bg,
-                            fontSize: fontSize
+                            fontSize: fontSize,
+                            color: color,
+                            fontWeight: fontWeight,
+                            border: border
                         }}>
-                {title}
+                <p>{title}</p>
+                {icon && <img src={icon} width='18px' height='9px' alt='button-icon'/>}
             </button>
         </Link>
 

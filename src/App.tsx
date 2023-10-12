@@ -6,8 +6,12 @@ import SingleProductPage from './pages/SingleProductPage';
 import ShopPage from '@/pages/ShopPage';
 import CartPage from '@/pages/CartPage';
 import React, {useEffect, useState} from 'react';
-import CartPopup from "@/components/cartPopup/CartPopup";
-import {useAppSelector} from "@/hooks/useAppDispatch";
+import CartPopup from '@/components/cartPopup/CartPopup';
+import {useAppSelector} from '@/hooks/useAppDispatch';
+import ComparisonPage from '@/pages/ComparisonPage';
+import CheckoutPage from '@/pages/CheckoutPage';
+import ContactsPage from '@/pages/ContactPage';
+import BlogPage from "@/pages/BlogPage";
 
 function App() {
 
@@ -37,6 +41,10 @@ function App() {
                 }/>
                 <Route path='/shop' element={<ShopPage setIsOpen={setIsOpen}/>}/>
                 <Route path='/cart' element={<CartPage/>}/>
+                <Route path='/comparison' element={<ComparisonPage setIsOpen={setIsOpen}/>}/>
+                <Route path='/checkout' element={<CheckoutPage/>}/>
+                <Route path='/contacts' element={<ContactsPage/>}/>
+                <Route path='/blog' element={<BlogPage/>}/>
             </Routes>
 
             <Footer/>

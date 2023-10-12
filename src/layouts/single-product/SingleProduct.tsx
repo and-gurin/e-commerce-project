@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import s from './SingleProduct.module.scss';
-import {ProductType} from '@/features/product/productSlice';
+import {changeRating, ProductType} from '@/features/product/productSlice';
 import firstThumb from '@/assets/product-photo/Outdoor sofa set 2.png'
 import secondThumb from '@/assets/product-photo/Outdoor sofa set_2 1.png'
 import thirdThumb from '@/assets/product-photo/Stuart sofa 1.png'
@@ -24,6 +24,7 @@ import {useAppDispatch, useAppSelector} from "@/hooks/useAppDispatch";
 import {addToCart} from "@/features/cart/cartSlice";
 import React from 'react';
 import Radio from '@/components/radio/Radio';
+import {addToComparison} from "@/features/conparison/comparisonSlice";
 
 const productThumbnail = [
     {
@@ -156,9 +157,10 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
     const products = useAppSelector(state => state.product);
     const dispatch = useAppDispatch()
 
-    const [countValue, setCountValue] = useState(1)
+    const [countValue, setCountValue] = useState<number>(1)
     const [product, setProduct] = useState<ProductType>({
         id: 1,
+        rating: 3,
         src: syltherine,
         alt: 'syltherine',
         title: 'Syltherine',
@@ -167,9 +169,38 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
         oldPrice: 3500000,
         status: '-30%',
         quantity: 1,
+        general: {
+            salesPackage: '1 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion'
+        },
+        product: {
+            fillingMaterial: 'Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
+        },
+        dimensions: {
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm',
+        },
+        warranty: {
+            warrantySummary: '1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '1 Year'
+        },
     });
     const [photo, setPhoto] = useState<string>(productPhoto[0].src)
-    const [ratingValue, setRatingValue] = useState<number | null>(4.5)
     const [sizeValue, setSizeValue] = useState('')
     const [colorValue, setColorValue] = useState('')
     const [descriptionValue, setDescriptionValue] = useState('description')
@@ -226,9 +257,9 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
                             <Rating name='half-rating'
                                     sx={{fontSize: '20px', marginRight: '18px'}}
                                     emptyIcon={<Star fontSize="inherit" sx={{color: 'white'}}/>}
-                                    value={ratingValue}
+                                    value={singleProduct?.rating}
                                     onChange={(_event, newValue) => {
-                                        setRatingValue(newValue);
+                                        dispatch(changeRating({id: singleProduct?.id, ratingValue: newValue}))
                                     }}
                                     precision={0.5}/>
                             <svg width="2" height="37" style={{marginRight: '22px'}} viewBox="0 0 2 37" fill="none"
@@ -270,9 +301,9 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
                         <div className={s.productButtons}>
                             <InputPlusMinus
                                 value={countValue}
-                                onClickPlus={() => setCountValue(countValue + 1)}
-                                onClickMinus={() => setCountValue(countValue <= 0 ? countValue : countValue - 1)}
-                                onChange={(e) => setCountValue(e.currentTarget.value)}
+                                onClickPlus={() => setCountValue(+countValue + 1)}
+                                onClickMinus={() => setCountValue(countValue <= 0 ? countValue : +countValue - 1)}
+                                onChange={(e) => setCountValue(+e.currentTarget.value)}
                             />
                             <CartButton title='Add To Cart'
                                         width='215px'
@@ -287,7 +318,8 @@ const SingleProduct = ({setIsOpen}: {setIsOpen: (isOpen: boolean) => void}) => {
                                         height='64px'
                                         borderRadius='15px'
                                         bg={'transparent'}
-                                        link={'#'}
+                                        link={'/comparison'}
+                                        onClick={()=>dispatch(addToComparison(product))}
                             />
                         </div>
                         <aside className={s.technicalInfo}>

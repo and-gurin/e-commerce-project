@@ -1,0 +1,35 @@
+@import 'src/styles/placeholders';
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.select {
+  border: solid 1px $grayFifthColor;
+  border-radius: 10px;
+  outline: none;
+  padding: 25px 30px;
+  cursor: pointer;
+  width: 453px;
+  height: 75px;
+  @include font(1.6rem, 150%, 400, $grayFifthColor);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('../../assets/svg/arrow-down-alt.svg');
+  background-repeat: no-repeat;
+  background-position: right 26px center;
+}
+
+.select::placeholder {
+  color: $grayFifthColor;
+}
+
+.select:focus {
+  border: solid 1px $graySecondColor;
+  outline: none;
+}
+
+.textLabel {
+  margin-bottom: 22px;
+  @include font(1.6rem, 150%, 500, $blackColor);
+  display: block;
+}

@@ -11,8 +11,8 @@ import React from "react";
 const navigationLinks = [
     {id: 1, title: 'Home', href: '/'},
     {id: 2, title: 'Shop', href: '/shop'},
-    {id: 3, title: 'About', href: '/links'},
-    {id: 4, title: 'Contact', href: '/'},
+    {id: 3, title: 'About', href: '/blog'},
+    {id: 4, title: 'Contact', href: '/contacts'},
 ]
 
 const userMenuLinks = [

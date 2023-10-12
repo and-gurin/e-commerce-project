@@ -5,6 +5,13 @@
   border: 1px solid $blackColor;
   @include font(2.0rem, 150%, 400, $blackColor);
   cursor: pointer;
+
+  &_icon {
+    padding: 7px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .button:hover {

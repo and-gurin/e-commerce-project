@@ -76,8 +76,9 @@ const Popover = ({setIsOpen, productInCart,}:
                                 height='30px'
                                 borderRadius='15px'
                                 bg={'transparent'}
-                                link={'#'}
+                                link={'/checkout'}
                                 fontSize={'12px'}
+                                onClick={() => setIsOpen(false)}
                     />
                     <CartButton title='Comparison'
                                 width='135px'
