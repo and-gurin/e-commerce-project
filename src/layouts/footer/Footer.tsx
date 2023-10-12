@@ -45,7 +45,7 @@ const Footer = () => {
                         <Navigation links={help}/>
                     </ul>
                 </div>
-                <div >
+                <div className={s.newsletter}>
                     <p className={s.footerTitle}>
                         Newsletter
                     </p>

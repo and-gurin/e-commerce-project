@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Input.module.scss';
 
-const Input = ({disabled, textLabel, caption, error, value, onChangeHandler, placeholderText, width, id}:
+const Input = ({disabled, textLabel, caption, error, value, onChangeHandler, placeholderText, width, id, icon, height}:
                    {
                        disabled?: boolean
                        textLabel: string
@@ -12,8 +12,12 @@ const Input = ({disabled, textLabel, caption, error, value, onChangeHandler, pla
                        placeholderText?: string
                        width?: string
                        id?: string
+                       icon?: boolean
+                       height?: string
                    }
 ) => {
+
+    const finalClassName = icon ? `${style.input} ${style.icon}` : style.input
 
     return (
         <div>
@@ -22,10 +26,10 @@ const Input = ({disabled, textLabel, caption, error, value, onChangeHandler, pla
             <input value={value}
                    id={id}
                    onChange={onChangeHandler}
-                   className={error ? `${style.input} ${style.error}` : style.input}
+                   className={error ? `${finalClassName} ${style.error}` : finalClassName}
                    disabled={disabled}
                    placeholder={placeholderText}
-                   style={{width: width}}
+                   style={{width: width, height: height}}
             />
             {caption ? <div className={style.caption}>Block + primary</div> :
                 error ? <div className={style.errorMessage}>Error Message</div> : null}

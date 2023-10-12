@@ -5,7 +5,7 @@ import s from './Pagination.module.scss'
 const PaginationItems = ({pageCount, handlePageClick}:
                              {
                                  pageCount: number,
-                                 handlePageClick: (e: {}) => void
+                                 handlePageClick: (selectedItem: { selected: number; }) => void
                              }
 ) => {
 
@@ -15,11 +15,11 @@ const PaginationItems = ({pageCount, handlePageClick}:
             nextLabel={'next'}
             pageCount={pageCount}
             onPageChange={handlePageClick}
-            previousLinkClassName={"pagination__link"}
-            nextLinkClassName={"pagination__link"}
-            disabledClassName={"pagination__link--disabled"}
-            activeClassName={"pagination__link--active"}
             containerClassName={s.pagination}
+            pageLinkClassName={s.paginationLinks}
+            nextLinkClassName={s.paginationNext}
+            activeLinkClassName={s.paginationActive}
+            disabledLinkClassName={s.paginationDisable}
         />
     );
 };

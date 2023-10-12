@@ -11,6 +11,7 @@ import {useAppSelector} from '@/hooks/useAppDispatch';
 import ComparisonPage from '@/pages/ComparisonPage';
 import CheckoutPage from '@/pages/CheckoutPage';
 import ContactsPage from '@/pages/ContactPage';
+import BlogPage from "@/pages/BlogPage";
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
                 <Route path='/comparison' element={<ComparisonPage setIsOpen={setIsOpen}/>}/>
                 <Route path='/checkout' element={<CheckoutPage/>}/>
                 <Route path='/contacts' element={<ContactsPage/>}/>
+                <Route path='/blog' element={<BlogPage/>}/>
             </Routes>
 
             <Footer/>

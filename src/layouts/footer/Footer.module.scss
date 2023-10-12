@@ -12,10 +12,11 @@
 .wrapper {
   padding: 52px 100px;
   display: flex;
+  justify-content: space-between;
 }
 
 .contacts {
-  margin-right: 144px;
+  margin-right: 136px;
 
   &Title {
     @include font(2.4rem, 2.4rem, 700, $blackColor);
@@ -39,7 +40,11 @@
 }
 
 .help {
-  margin-right: 76px;
+  margin-right: 72px;
+}
+
+.newsletter {
+  padding-right: 52px;
 }
 
 .input {

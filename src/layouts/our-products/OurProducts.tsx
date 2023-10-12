@@ -1,15 +1,15 @@
 import s from './OurProducts.module.scss';
 import {Link} from 'react-router-dom';
 import {useState} from 'react';
-import ReactPaginate from "react-paginate";
 import React from 'react';
 import {ProductType} from '@/features/product/productSlice';
 import LikeIcon from '@/assets/svg/LikeIcon';
 import ShareIcon from '@/assets/svg/ShareIcon';
 import CompareIcon from '@/assets/svg/CompareIcon';
-import {useAppDispatch, useAppSelector} from "@/hooks/useAppDispatch";
-import {addToCart} from "@/features/cart/cartSlice";
-import {addToComparison} from "@/features/conparison/comparisonSlice";
+import {useAppDispatch, useAppSelector} from '@/hooks/useAppDispatch';
+import {addToCart} from '@/features/cart/cartSlice';
+import {addToComparison} from '@/features/conparison/comparisonSlice';
+import PaginationItems from '@/layouts/pagination/Pagination';
 
 const width = '285px';
 const height = '301px'
@@ -108,8 +108,7 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
         productList.slice(0, amount) :
         productList.slice(offset, offset + itemsPerPage);
 
-    // @ts-ignore
-    const handlePageClick = (e) => {
+    const handlePageClick = (e: { selected: React.SetStateAction<number>; }) => {
         setCurrentPage(e.selected);
     };
 
@@ -126,16 +125,9 @@ export const OurProducts = ({title, pagination, amount, onClick, itemsPerPage, s
                     {currentPageData}
                 </div>
                 {pagination ?
-                    <ReactPaginate
-                        previousLabel={null}
-                        nextLabel={'Next'}
+                    <PaginationItems
+                        handlePageClick={handlePageClick}
                         pageCount={pageCount}
-                        onPageChange={handlePageClick}
-                        containerClassName={s.pagination}
-                        pageLinkClassName={s.paginationLinks}
-                        nextLinkClassName={s.paginationNext}
-                        activeLinkClassName={s.paginationActive}
-                        disabledLinkClassName={s.paginationDisable}
                     />
                     :
                     <button onClick={onClick} className={s.button}>
